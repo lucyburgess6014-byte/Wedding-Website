@@ -45,6 +45,7 @@ section {
   margin: 0 auto;
 }
 
+section[hidden] { display: none !important; }
 section.is-visible { display: block; }
 
 /* Hero */
@@ -71,14 +72,6 @@ section.is-visible { display: block; }
   object-position: center;
   z-index: 0;
   display: block;
-}
-
-#hero.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(30, 0, 12, 0.45);
-  z-index: 0;
 }
 
 #hero.hero.is-visible { display: flex; }
@@ -449,6 +442,7 @@ nav {
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 2px;
   z-index: 100;
@@ -475,6 +469,47 @@ nav button.active {
   letter-spacing: 0.03em;
 }
 
+.nav-lang-sep {
+  width: 1px;
+  height: 22px;
+  background: rgba(255,255,255,0.22);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+.nav-lang-wrap {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.18);
+  margin-left: 4px;
+}
+
+.nav-lang-btn {
+  font-family: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.8);
+  background: transparent;
+}
+
+.nav-lang-btn:hover,
+.nav-lang-btn:focus-visible { color: #fff; outline: none; }
+
+.nav-lang-btn[aria-pressed="true"] {
+  background: rgba(255,255,255,0.22);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(201,162,39,0.45);
+}
+
 /* RSVP */
 .rsvp-wrap { max-width: 640px; margin: 0 auto; }
 .rsvp-wrap iframe { width: 100%; min-height: 720px; border: 0; border-radius: 12px; background: var(--cream); }
@@ -495,6 +530,7 @@ nav button.active {
 
 @media (max-width: 600px) {
   nav button { padding: 12px 10px; font-size: 0.85rem; }
+  .nav-lang-btn { padding: 5px 9px; font-size: 0.75rem; }
 }
 </style>
 </head>
@@ -513,6 +549,11 @@ nav button.active {
   <button type="button" data-target="faq" data-i18n="nav_faq">FAQs</button>
   <button type="button" data-target="registry" data-i18n="nav_registry">Registry</button>
   <button type="button" data-target="rsvp" data-i18n="nav_rsvp">RSVP</button>
+  <div class="nav-lang-sep" aria-hidden="true"></div>
+  <div class="nav-lang-wrap" role="group" aria-label="Language">
+    <button type="button" class="nav-lang-btn" id="lang-en" data-set-lang="en" aria-pressed="true">EN</button>
+    <button type="button" class="nav-lang-btn" id="lang-ro" data-set-lang="ro" aria-pressed="false">RO</button>
+  </div>
 </nav>
 
 <main id="main">
@@ -526,15 +567,11 @@ nav button.active {
       <p data-i18n="hero_date">July 17, 2027</p>
       <p data-i18n="hero_place">Bucharest, Romania</p>
     </div>
-    <div class="hero-lang" role="group" aria-label="Language">
-      <button type="button" class="hero-lang-btn" id="lang-en" data-set-lang="en" aria-pressed="true">English</button>
-      <button type="button" class="hero-lang-btn" id="lang-ro" data-set-lang="ro" aria-pressed="false">Română</button>
-    </div>
   </div>
 </section>
 
 <!-- Our Story -->
-<section id="story" aria-labelledby="story-heading">
+<section id="story" hidden aria-labelledby="story-heading">
   <h2 id="story-heading"><img src="swan.png" alt="" width="48" height="48" loading="lazy"><span data-i18n="nav_story">Our Story</span></h2>
   <p class="section-lead" data-i18n="story_lead">We are so happy you are part of this chapter.</p>
   <div class="story-layout">
@@ -552,7 +589,7 @@ nav button.active {
 </section>
 
 <!-- Photos -->
-<section id="photos" aria-labelledby="photos-heading">
+<section id="photos" hidden aria-labelledby="photos-heading">
   <h2 id="photos-heading"><img src="swan.png" alt="" width="48" height="48" loading="lazy"><span data-i18n="nav_photos">Photos</span></h2>
   <p class="section-lead" data-i18n="photos_lead">A few favourites — click to enlarge.</p>
   <div class="grid" id="photo-grid" data-i18n-aria="photos_grid_aria" aria-label="Photo gallery"></div>
@@ -569,7 +606,7 @@ nav button.active {
 </div>
 
 <!-- Schedule -->
-<section id="schedule" aria-labelledby="schedule-heading">
+<section id="schedule" hidden aria-labelledby="schedule-heading">
   <h2 id="schedule-heading"><img src="swan.png" alt="" width="48" height="48" loading="lazy"><span data-i18n="sch_page_title">Weekend Schedule</span></h2>
   <p class="section-lead" data-i18n="schedule_lead">We can't wait to celebrate with you.</p>
   <div class="schedule-box">
@@ -602,7 +639,7 @@ nav button.active {
 </section>
 
 <!-- Travel -->
-<section id="travel" aria-labelledby="travel-heading">
+<section id="travel" hidden aria-labelledby="travel-heading">
   <h2 id="travel-heading"><img src="swan.png" alt="" width="48" height="48" loading="lazy"><span data-i18n="travel_h2">Travel &amp; Lodging</span></h2>
   <p class="section-lead" data-i18n="travel_lead">Bucharest Henri Coandă (OTP) is the main international airport, about 30–45 minutes from the city centre by car or taxi.</p>
   <div class="content-card">
@@ -612,7 +649,7 @@ nav button.active {
 </section>
 
 <!-- Things -->
-<section id="things" aria-labelledby="things-heading">
+<section id="things" hidden aria-labelledby="things-heading">
   <h2 id="things-heading"><img src="swan.png" alt="" width="48" height="48" loading="lazy"><span data-i18n="nav_things">Things To Do</span></h2>
   <p class="things-subhead" data-i18n="things_sub">We have an exciting week of activities leading up to the wedding!</p>
 
@@ -665,7 +702,7 @@ nav button.active {
 </section>
 
 <!-- FAQs -->
-<section id="faq" aria-labelledby="faq-heading">
+<section id="faq" hidden aria-labelledby="faq-heading">
   <h2 id="faq-heading"><img src="swan.png" alt="" width="48" height="48" loading="lazy"><span data-i18n="nav_faq">FAQs</span></h2>
 
   <details class="faq-item">
@@ -733,7 +770,7 @@ nav button.active {
 </section>
 
 <!-- Registry -->
-<section id="registry" aria-labelledby="registry-heading">
+<section id="registry" hidden aria-labelledby="registry-heading">
   <h2 id="registry-heading"><img src="swan.png" alt="" width="48" height="48" loading="lazy"><span data-i18n="nav_registry">Registry</span></h2>
   <p class="section-lead" data-i18n="reg_lead">Your presence is the best gift. If you would like to give something, we have registered at:</p>
   <div class="content-card">
@@ -742,7 +779,7 @@ nav button.active {
 </section>
 
 <!-- RSVP -->
-<section id="rsvp" aria-labelledby="rsvp-heading">
+<section id="rsvp" hidden aria-labelledby="rsvp-heading">
   <h2 id="rsvp-heading"><img src="swan.png" alt="" width="48" height="48" loading="lazy"><span data-i18n="nav_rsvp">RSVP</span></h2>
   <p class="section-lead" data-i18n="rsvp_lead">Please respond by the date on your invitation.</p>
   <div class="rsvp-wrap content-card rsvp-fallback">
@@ -1017,28 +1054,12 @@ nav button.active {
     if (!photoGrid || photoGrid.dataset.built === "1") return;
     photoGrid.dataset.built = "1";
     var altPrefix = typeof window.__weddingPhotoAltPrefix === "string" ? window.__weddingPhotoAltPrefix : "Lucy and Cosmin — photo ";
-
-    var observer = ("IntersectionObserver" in window) ? new IntersectionObserver(function(entries, obs) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          var img = entry.target;
-          if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute("data-src"); }
-          obs.unobserve(img);
-        }
-      });
-    }, { rootMargin: "200px" }) : null;
-
     for (var i = 1; i <= 30; i++) {
       var p = document.createElement("img");
-      if (observer) {
-        p.src = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
-        p.dataset.src = "lucy-cosmin-" + i + ".jpg";
-        observer.observe(p);
-      } else {
-        p.src = "lucy-cosmin-" + i + ".jpg";
-      }
+      p.src = "lucy-cosmin-" + i + ".jpg";
       p.dataset.full = "lucy-cosmin-" + i + ".jpg";
       p.alt = altPrefix + i;
+      p.loading = "lazy";
       p.decoding = "async";
       p.width = 420;
       p.height = 420;
@@ -1056,6 +1077,7 @@ nav button.active {
     buttons.forEach(function (b) {
       b.classList.toggle("active", b.dataset.target === id);
     });
+    window.scrollTo(0, 0);
     if (id === "photos") buildPhotoGallery();
   }
 
