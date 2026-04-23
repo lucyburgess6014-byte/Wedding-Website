@@ -241,16 +241,20 @@ p, li { line-height: 1.7; }
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 16px;
+  padding: 56px 60px 40px;
   cursor: zoom-out;
 }
 #lightbox.is-open { display: flex; }
 #lightbox img {
-  max-width: min(96vw, 1200px);
-  max-height: 90vh;
-  border-radius: 8px;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
   cursor: default;
   box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  display: block;
 }
 .lightbox-btn {
   position: absolute;
@@ -978,16 +982,12 @@ nav {
       cell.dataset.index = i - 1;
 
       var img = document.createElement("img");
-      img.dataset.full = "lucy-cosmin-" + i + ".jpg";
+      var src = "lucy-cosmin-" + i + ".jpg";
+      img.src = src;
+      img.dataset.full = src;
       img.alt = altPrefix + i;
-      img.width = 300;
-      img.height = 300;
       img.decoding = "async";
-
-      // Load thumb immediately — all 30 fire at once when tab is clicked
-      img.src = "thumbs/lucy-cosmin-" + i + ".jpg";
       img.onload = function() { this.classList.add("loaded"); };
-      // If already cached, onload won't fire — check complete
       if (img.complete) img.classList.add("loaded");
 
       cell.appendChild(img);
