@@ -1014,16 +1014,38 @@ nav {
 
       var img = document.createElement("img");
       var src = "lucy-cosmin-" + i + ".jpg";
+      // Images are already preloaded — pull from browser cache
       img.src = src;
       img.dataset.full = src;
       img.alt = altPrefix + i;
       img.decoding = "async";
-      img.onload = function() { this.classList.add("loaded"); };
-      if (img.complete) img.classList.add("loaded");
+      // Mark loaded immediately if cached, else on load
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add("loaded");
+      } else {
+        img.onload = function() { this.classList.add("loaded"); };
+      }
 
       cell.appendChild(img);
       photoGrid.appendChild(cell);
     }
+  }
+
+  // Silently preload all 30 photos in the background right after page load.
+  // Staggered with small delays so hero.jpg loads first without competition.
+  function backgroundPreload() {
+    var i = 1;
+    function loadNext() {
+      if (i > 30) return;
+      var img = new Image();
+      img.src = "lucy-cosmin-" + i + ".jpg";
+      i++;
+      // Small stagger: each image starts 80ms after the previous
+      // Fast connections will load them all quickly; slow ones still won't block the hero
+      setTimeout(loadNext, 80);
+    }
+    // Wait 1.5s after page load before starting — hero and fonts load first
+    setTimeout(loadNext, 1500);
   }
 
   function showSection(id) {
@@ -1035,7 +1057,6 @@ nav {
     buttons.forEach(function (b) {
       b.classList.toggle("active", b.dataset.target === id);
     });
-    // Close hamburger menu on mobile when a section is selected
     if (navLinks) navLinks.classList.remove("is-open");
     if (hamburger) hamburger.setAttribute("aria-expanded", "false");
     window.scrollTo(0, 0);
@@ -1052,6 +1073,9 @@ nav {
     const on = sec.classList.contains("is-visible");
     sec.hidden = !on;
   });
+
+  // Start background preloading immediately
+  backgroundPreload();
 
   photoGrid.addEventListener("click", function (e) {
     var cell = e.target.closest(".photo-cell");
