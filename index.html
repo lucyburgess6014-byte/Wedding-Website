@@ -987,40 +987,34 @@ nav {
     lightboxCount.textContent = total > 0 ? (i + 1) + " / " + total : "";
   }
 
-  function preloadAdjacent(index) {
-    var photos = getPhotoEls();
-    if (!photos.length) return;
-    [-1, 1].forEach(function(offset) {
-      var adj = ((index + offset) % photos.length + photos.length) % photos.length;
-      var adjSrc = photos[adj].dataset.full || photos[adj].src;
-      if (adjSrc) { var p = new Image(); p.src = adjSrc; }
-    });
-  }
-
   function openLightboxAt(index) {
     const photos = getPhotoEls();
     if (photos.length === 0) return;
     currentIndex = ((index % photos.length) + photos.length) % photos.length;
     const img = photos[currentIndex];
-    const fullSrc = img.dataset.full || img.src;
+    const thumbSrc = img.src;
+    const fullSrc  = img.dataset.full;
     var lbFallback = typeof window.__weddingLightboxLabel === "string" ? window.__weddingLightboxLabel : "Enlarged photo";
+    var altText = img.alt || lbFallback;
 
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt || lbFallback;
+    // Show thumb instantly — already in browser cache from grid
+    lightboxImg.src = thumbSrc;
+    lightboxImg.alt = altText;
     lightbox.classList.add("is-open");
     lightbox.hidden = false;
     document.body.style.overflow = "hidden";
     setCount(currentIndex, photos.length);
 
-    if (fullSrc && fullSrc !== img.src) {
-      var full = new Image();
-      full.onload = function() {
-        if (lightbox.classList.contains("is-open") && lightboxImg.alt === (img.alt || lbFallback)) {
-          lightboxImg.src = fullSrc;
-        }
-      };
-      full.src = fullSrc;
-    }
+    // Swap to full-size silently once loaded
+    var full = new Image();
+    full.onload = function() {
+      if (lightbox.classList.contains("is-open") && lightboxImg.alt === altText) {
+        lightboxImg.src = fullSrc;
+      }
+    };
+    full.src = fullSrc;
+
+    // Preload adjacent full-size images
     preloadAdjacent(currentIndex);
   }
 
@@ -1036,7 +1030,7 @@ nav {
   function goNext() { openLightboxAt(currentIndex + 1); }
   function goPrev() { openLightboxAt(currentIndex - 1); }
 
-  // Build one page of photos (1-indexed)
+  // Build one page — thumbnails in grid, full-size stored in data-full
   function buildPage(page) {
     photoGrid.innerHTML = "";
     photoGrid.dataset.built = "1";
@@ -1049,11 +1043,10 @@ nav {
       cell.className = "photo-cell";
 
       var img = document.createElement("img");
-      var src = "lucy-cosmin-" + i + ".jpg";
-      img.src = src;
-      img.dataset.full = src;
-      img.alt = altPrefix + i;
-      img.decoding = "async";
+      img.src          = "thumbs/lucy-cosmin-" + i + ".jpg"; // tiny — loads instantly
+      img.dataset.full = "lucy-cosmin-" + i + ".jpg";        // full-size for lightbox
+      img.alt          = altPrefix + i;
+      img.decoding     = "async";
       if (img.complete && img.naturalWidth > 0) {
         img.classList.add("loaded");
       } else {
@@ -1069,22 +1062,22 @@ nav {
       btn.classList.toggle("active", parseInt(btn.dataset.page) === page);
     });
 
-    // Preload next page silently in background
+    // Preload next page thumbs silently
     var nextPage = page + 1;
     if (nextPage <= Math.ceil(totalPhotos / photosPerPage)) {
       var ns = (nextPage - 1) * photosPerPage + 1;
       var ne = Math.min(ns + photosPerPage - 1, totalPhotos);
       setTimeout(function() {
         for (var j = ns; j <= ne; j++) {
-          var p = new Image(); p.src = "lucy-cosmin-" + j + ".jpg";
+          var p = new Image();
+          p.src = "thumbs/lucy-cosmin-" + j + ".jpg";
         }
-      }, 500);
+      }, 300);
     }
   }
 
   function buildPhotoGallery() {
     buildPage(currentPage);
-    // Wire up pagination buttons
     document.querySelectorAll(".page-btn").forEach(function(btn) {
       btn.addEventListener("click", function() {
         currentPage = parseInt(this.dataset.page);
@@ -1094,17 +1087,32 @@ nav {
     });
   }
 
-  // Background preload: hero loads first, then photos staggered
+  // Preload: thumbs first (fast, unblocks grid), then full-size (for lightbox)
   function backgroundPreload() {
-    var i = 1;
-    function loadNext() {
-      if (i > totalPhotos) return;
-      var img = new Image();
-      img.src = "lucy-cosmin-" + i + ".jpg";
-      i++;
-      setTimeout(loadNext, 80);
-    }
-    setTimeout(loadNext, 1500);
+    // Phase 1: all 30 thumbs, starting 1.5s after page load
+    setTimeout(function() {
+      for (var i = 1; i <= totalPhotos; i++) {
+        (function(n) {
+          setTimeout(function() {
+            var t = new Image();
+            t.src = "thumbs/lucy-cosmin-" + n + ".jpg";
+          }, (n - 1) * 40); // 40ms stagger — all 30 thumbs done in ~1.2s
+        })(i);
+      }
+    }, 1500);
+
+    // Phase 2: full-size images, starting 4s after page load
+    // By then hero is long loaded and thumbs are cached
+    setTimeout(function() {
+      for (var i = 1; i <= totalPhotos; i++) {
+        (function(n) {
+          setTimeout(function() {
+            var f = new Image();
+            f.src = "lucy-cosmin-" + n + ".jpg";
+          }, (n - 1) * 100); // 100ms stagger
+        })(i);
+      }
+    }, 4000);
   }
 
   function showSection(id) {
@@ -1145,9 +1153,12 @@ nav {
   prevBtn.addEventListener("click", function (e) { e.stopPropagation(); goPrev(); });
   nextBtn.addEventListener("click", function (e) { e.stopPropagation(); goNext(); });
 
-  // Click the dark backdrop (anywhere outside the image) to close
+  // Click the dark backdrop to close — check we didn't click the image or buttons
   lightbox.addEventListener("click", function (e) {
-    if (e.target !== lightboxImg) closeLightbox();
+    if (e.target === lightboxImg) return;
+    if (e.target === prevBtn || e.target === nextBtn) return;
+    if (prevBtn.contains(e.target) || nextBtn.contains(e.target)) return;
+    closeLightbox();
   });
 
   document.addEventListener("keydown", function (e) {
