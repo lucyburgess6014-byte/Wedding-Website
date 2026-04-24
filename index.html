@@ -232,6 +232,37 @@ p, li { line-height: 1.7; }
 }
 #photos .grid .photo-cell img.loaded { opacity: 1; }
 
+/* ── PAGINATION ── */
+.photo-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 1.5rem auto 0;
+}
+.page-btn {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.page-btn:hover, .page-btn:focus-visible { background: rgba(255,255,255,0.12); color: #fff; outline: none; }
+.page-btn.active {
+  background: rgba(255,255,255,0.22);
+  color: #fff;
+  border-color: rgba(201,162,39,0.6);
+  box-shadow: inset 0 0 0 1px rgba(201,162,39,0.4);
+}
+.page-btn:disabled { opacity: 0.35; cursor: default; }
+
 /* ── LIGHTBOX ── */
 #lightbox {
   display: none;
@@ -507,6 +538,11 @@ nav {
   <h2 id="photos-heading"><img src="swan.png" alt="" width="48" height="48" loading="lazy"><span data-i18n="nav_photos">Photos</span></h2>
   <p class="section-lead" data-i18n="photos_lead">A few favourites — click to enlarge.</p>
   <div class="grid" id="photo-grid" data-i18n-aria="photos_grid_aria" aria-label="Photo gallery"></div>
+  <div class="photo-pagination" id="photo-pagination">
+    <button class="page-btn active" data-page="1">Page 1</button>
+    <button class="page-btn" data-page="2">Page 2</button>
+    <button class="page-btn" data-page="3">Page 3</button>
+  </div>
   <p class="photos-credit" style="margin:1.25rem auto 0; max-width: 44rem; font-size: 0.95rem; opacity: 0.9; line-height: 1.55;" data-i18n-html="photos_credit">Our engagement photos were done by the amazing Andreea Sali from Eforie Sud<br>
     Instagram business account: <strong>as.momentcolor</strong><br>
     <a href="https://www.fotografi-cameramani.ro/andreea-sali_6974" target="_blank" rel="noopener noreferrer">fotografi-cameramani.ro/andreea-sali_6974</a></p>
@@ -937,7 +973,10 @@ nav {
     });
   }
 
-  let currentIndex = -1;
+  var currentPage = 1;
+  var photosPerPage = 10;
+  var totalPhotos = 30;
+  var currentIndex = -1;
 
   function getPhotoEls() {
     return Array.prototype.slice.call(photoGrid.querySelectorAll(".photo-cell img"));
@@ -966,16 +1005,13 @@ nav {
     const fullSrc = img.dataset.full || img.src;
     var lbFallback = typeof window.__weddingLightboxLabel === "string" ? window.__weddingLightboxLabel : "Enlarged photo";
 
-    // Step 1: show the already-loaded grid thumb instantly
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt || lbFallback;
-    lightboxImg.style.filter = "blur(0px)";
     lightbox.classList.add("is-open");
     lightbox.hidden = false;
     document.body.style.overflow = "hidden";
     setCount(currentIndex, photos.length);
 
-    // Step 2: load full-size in background, swap when ready
     if (fullSrc && fullSrc !== img.src) {
       var full = new Image();
       full.onload = function() {
@@ -985,8 +1021,6 @@ nav {
       };
       full.src = fullSrc;
     }
-
-    // Step 3: silently preload prev and next photos
     preloadAdjacent(currentIndex);
   }
 
@@ -1002,24 +1036,24 @@ nav {
   function goNext() { openLightboxAt(currentIndex + 1); }
   function goPrev() { openLightboxAt(currentIndex - 1); }
 
-  function buildPhotoGallery() {
-    if (!photoGrid || photoGrid.dataset.built === "1") return;
+  // Build one page of photos (1-indexed)
+  function buildPage(page) {
+    photoGrid.innerHTML = "";
     photoGrid.dataset.built = "1";
     var altPrefix = typeof window.__weddingPhotoAltPrefix === "string" ? window.__weddingPhotoAltPrefix : "Lucy and Cosmin — photo ";
+    var start = (page - 1) * photosPerPage + 1;
+    var end   = Math.min(start + photosPerPage - 1, totalPhotos);
 
-    for (var i = 1; i <= 30; i++) {
+    for (var i = start; i <= end; i++) {
       var cell = document.createElement("div");
       cell.className = "photo-cell";
-      cell.dataset.index = i - 1;
 
       var img = document.createElement("img");
       var src = "lucy-cosmin-" + i + ".jpg";
-      // Images are already preloaded — pull from browser cache
       img.src = src;
       img.dataset.full = src;
       img.alt = altPrefix + i;
       img.decoding = "async";
-      // Mark loaded immediately if cached, else on load
       if (img.complete && img.naturalWidth > 0) {
         img.classList.add("loaded");
       } else {
@@ -1029,22 +1063,47 @@ nav {
       cell.appendChild(img);
       photoGrid.appendChild(cell);
     }
+
+    // Update pagination buttons
+    document.querySelectorAll(".page-btn").forEach(function(btn) {
+      btn.classList.toggle("active", parseInt(btn.dataset.page) === page);
+    });
+
+    // Preload next page silently in background
+    var nextPage = page + 1;
+    if (nextPage <= Math.ceil(totalPhotos / photosPerPage)) {
+      var ns = (nextPage - 1) * photosPerPage + 1;
+      var ne = Math.min(ns + photosPerPage - 1, totalPhotos);
+      setTimeout(function() {
+        for (var j = ns; j <= ne; j++) {
+          var p = new Image(); p.src = "lucy-cosmin-" + j + ".jpg";
+        }
+      }, 500);
+    }
   }
 
-  // Silently preload all 30 photos in the background right after page load.
-  // Staggered with small delays so hero.jpg loads first without competition.
+  function buildPhotoGallery() {
+    buildPage(currentPage);
+    // Wire up pagination buttons
+    document.querySelectorAll(".page-btn").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        currentPage = parseInt(this.dataset.page);
+        buildPage(currentPage);
+        window.scrollTo(0, 0);
+      });
+    });
+  }
+
+  // Background preload: hero loads first, then photos staggered
   function backgroundPreload() {
     var i = 1;
     function loadNext() {
-      if (i > 30) return;
+      if (i > totalPhotos) return;
       var img = new Image();
       img.src = "lucy-cosmin-" + i + ".jpg";
       i++;
-      // Small stagger: each image starts 80ms after the previous
-      // Fast connections will load them all quickly; slow ones still won't block the hero
       setTimeout(loadNext, 80);
     }
-    // Wait 1.5s after page load before starting — hero and fonts load first
     setTimeout(loadNext, 1500);
   }
 
@@ -1074,7 +1133,6 @@ nav {
     sec.hidden = !on;
   });
 
-  // Start background preloading immediately
   backgroundPreload();
 
   photoGrid.addEventListener("click", function (e) {
@@ -1087,8 +1145,9 @@ nav {
   prevBtn.addEventListener("click", function (e) { e.stopPropagation(); goPrev(); });
   nextBtn.addEventListener("click", function (e) { e.stopPropagation(); goNext(); });
 
+  // Click the dark backdrop (anywhere outside the image) to close
   lightbox.addEventListener("click", function (e) {
-    if (e.target === lightbox) closeLightbox();
+    if (e.target !== lightboxImg) closeLightbox();
   });
 
   document.addEventListener("keydown", function (e) {
