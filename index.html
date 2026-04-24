@@ -948,18 +948,46 @@ nav {
     lightboxCount.textContent = total > 0 ? (i + 1) + " / " + total : "";
   }
 
+  function preloadAdjacent(index) {
+    var photos = getPhotoEls();
+    if (!photos.length) return;
+    [-1, 1].forEach(function(offset) {
+      var adj = ((index + offset) % photos.length + photos.length) % photos.length;
+      var adjSrc = photos[adj].dataset.full || photos[adj].src;
+      if (adjSrc) { var p = new Image(); p.src = adjSrc; }
+    });
+  }
+
   function openLightboxAt(index) {
     const photos = getPhotoEls();
     if (photos.length === 0) return;
     currentIndex = ((index % photos.length) + photos.length) % photos.length;
     const img = photos[currentIndex];
-    lightboxImg.src = img.dataset.full || img.src;
+    const fullSrc = img.dataset.full || img.src;
     var lbFallback = typeof window.__weddingLightboxLabel === "string" ? window.__weddingLightboxLabel : "Enlarged photo";
+
+    // Step 1: show the already-loaded grid thumb instantly
+    lightboxImg.src = img.src;
     lightboxImg.alt = img.alt || lbFallback;
+    lightboxImg.style.filter = "blur(0px)";
     lightbox.classList.add("is-open");
     lightbox.hidden = false;
     document.body.style.overflow = "hidden";
     setCount(currentIndex, photos.length);
+
+    // Step 2: load full-size in background, swap when ready
+    if (fullSrc && fullSrc !== img.src) {
+      var full = new Image();
+      full.onload = function() {
+        if (lightbox.classList.contains("is-open") && lightboxImg.alt === (img.alt || lbFallback)) {
+          lightboxImg.src = fullSrc;
+        }
+      };
+      full.src = fullSrc;
+    }
+
+    // Step 3: silently preload prev and next photos
+    preloadAdjacent(currentIndex);
   }
 
   function closeLightbox() {
