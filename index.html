@@ -306,6 +306,31 @@ p, li { line-height: 1.7; }
 .lightbox-btn:hover, .lightbox-btn:focus-visible { background: rgba(0,0,0,0.8); outline: none; }
 .lightbox-btn.prev { left: 12px; }
 .lightbox-btn.next { right: 12px; }
+
+.lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  z-index: 1010;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: Arial, sans-serif;
+}
+.lightbox-close:hover, .lightbox-close:focus-visible {
+  background: rgba(0,0,0,0.9);
+  outline: none;
+}
 .lightbox-count {
   position: fixed;
   bottom: 16px; left: 50%;
@@ -549,6 +574,7 @@ nav {
 </section>
 
 <div id="lightbox" role="dialog" aria-modal="true" data-i18n-aria="lightbox_label" aria-label="Enlarged photo" hidden>
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close photo">&#x2715;</button>
   <button type="button" class="lightbox-btn prev" data-i18n-aria="lightbox_prev" aria-label="Previous photo">‹</button>
   <img id="lightbox-img" alt="">
   <button type="button" class="lightbox-btn next" data-i18n-aria="lightbox_next" aria-label="Next photo">›</button>
@@ -962,6 +988,7 @@ nav {
   const lightboxCount = document.getElementById("lightbox-count");
   const prevBtn = lightbox.querySelector(".lightbox-btn.prev");
   const nextBtn = lightbox.querySelector(".lightbox-btn.next");
+  const closeBtn = document.getElementById("lightbox-close");
 
   // Hamburger menu
   const hamburger = document.getElementById("nav-hamburger");
@@ -992,29 +1019,16 @@ nav {
     if (photos.length === 0) return;
     currentIndex = ((index % photos.length) + photos.length) % photos.length;
     const img = photos[currentIndex];
-    const thumbSrc = img.src;
-    const fullSrc  = img.dataset.full;
+    const fullSrc = img.dataset.full;
     var lbFallback = typeof window.__weddingLightboxLabel === "string" ? window.__weddingLightboxLabel : "Enlarged photo";
-    var altText = img.alt || lbFallback;
 
-    // Show thumb instantly — already in browser cache from grid
-    lightboxImg.src = thumbSrc;
-    lightboxImg.alt = altText;
+    // Show full-size directly — it's already in browser cache from backgroundPreload()
+    lightboxImg.src = fullSrc;
+    lightboxImg.alt = img.alt || lbFallback;
     lightbox.classList.add("is-open");
     lightbox.hidden = false;
     document.body.style.overflow = "hidden";
     setCount(currentIndex, photos.length);
-
-    // Swap to full-size silently once loaded
-    var full = new Image();
-    full.onload = function() {
-      if (lightbox.classList.contains("is-open") && lightboxImg.alt === altText) {
-        lightboxImg.src = fullSrc;
-      }
-    };
-    full.src = fullSrc;
-
-    // Preload adjacent full-size images
     preloadAdjacent(currentIndex);
   }
 
@@ -1146,14 +1160,16 @@ nav {
     openLightboxAt(allCells.indexOf(cell));
   });
 
+  if (closeBtn) closeBtn.addEventListener("click", function(e) { e.stopPropagation(); closeLightbox(); });
   prevBtn.addEventListener("click", function (e) { e.stopPropagation(); goPrev(); });
   nextBtn.addEventListener("click", function (e) { e.stopPropagation(); goNext(); });
 
-  // Click the dark backdrop to close — check we didn't click the image or buttons
+  // Only close when clicking the dark backdrop itself
   lightbox.addEventListener("click", function (e) {
     if (e.target === lightboxImg) return;
-    if (e.target === prevBtn || e.target === nextBtn) return;
-    if (prevBtn.contains(e.target) || nextBtn.contains(e.target)) return;
+    if (e.target === prevBtn || prevBtn.contains(e.target)) return;
+    if (e.target === nextBtn || nextBtn.contains(e.target)) return;
+    if (e.target === closeBtn || (closeBtn && closeBtn.contains(e.target))) return;
     closeLightbox();
   });
 
