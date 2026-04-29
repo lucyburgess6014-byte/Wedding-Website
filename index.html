@@ -16,9 +16,6 @@
   --wine-deep: #2d0012;
   --cream: #FFF8E1;
   --gold: #c9a227;
-  --wisteria: #9B72AA;
-  --wisteria-light: #C5A8D0;
-  --wisteria-deep: #6B3F7A;
   --nav-h: 52px;
   --section-top-pad: 32px;
   --section-content-y: calc(var(--nav-h) + var(--section-top-pad));
@@ -51,27 +48,19 @@ section {
 section[hidden] { display: none !important; }
 section.is-visible { display: block; }
 
-/* ── WISTERIA ACCENTS (decorative only — no text color changes) ── */
+
 
 /* FAQ open left border accent */
-details[open] .faq-question { border-left: 3px solid var(--wisteria); }
 
 /* Nav active tab — subtle wisteria tint */
-.nav-links button.active {
-  background: rgba(155,114,170,0.22);
-  box-shadow: inset 0 -2px 0 var(--wisteria);
-}
+.nav-links button.active { background: rgba(255,255,255,0.28); font-weight: 600; border-left: none; }
 
 /* Wisteria top-border on content cards */
 .content-card {
-  border-top: 2px solid rgba(197,168,208,0.5);
 }
 
 /* Lang toggle active in wisteria */
-.nav-lang-btn[aria-pressed="true"] {
-  background: rgba(155,114,170,0.25);
-  box-shadow: inset 0 0 0 1px rgba(155,114,170,0.6);
-}
+.nav-lang-btn[aria-pressed="true"] { background: rgba(255,255,255,0.22); color: #fff; box-shadow: inset 0 0 0 1px rgba(201,162,39,0.5); }
 
 
 /* ── HERO ── */
@@ -404,7 +393,7 @@ nav {
   display: flex;
   align-items: center;
   z-index: 200;
-  border-bottom: 1px solid rgba(155,114,170,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   padding: 0 12px;
 }
 
@@ -558,126 +547,8 @@ nav {
 <!-- Hero -->
 <section id="hero" class="hero is-visible" aria-label="Welcome">
   <img id="hero-bg" src="hero.jpg" alt="" aria-hidden="true" fetchpriority="high">
-  <!-- Cascading wisteria from top corners -->
-  <svg aria-hidden="true" style="position:absolute;top:52px;left:0;width:220px;height:260px;z-index:1;pointer-events:none;opacity:0.55;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 260">
-    <!-- woody branch from top-left -->
-    <path d="M0,0 Q30,20 55,35 Q80,50 90,70 Q100,90 95,115" fill="none" stroke="#4a2a5a" stroke-width="3" stroke-linecap="round"/>
-    <path d="M55,35 Q70,45 85,42" fill="none" stroke="#4a2a5a" stroke-width="2" stroke-linecap="round"/>
-    <path d="M75,58 Q95,62 110,55" fill="none" stroke="#5a3a6a" stroke-width="1.5" stroke-linecap="round"/>
-    <!-- raceme 1 from branch -->
-    <path d="M85,42 Q84,52 83,62" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-    <ellipse cx="83" cy="65" rx="3.5" ry="4.5" fill="#8B62A0" opacity="0.9"/>
-    <ellipse cx="80" cy="72" rx="3.2" ry="4.2" fill="#9B72AA" opacity="0.85"/>
-    <ellipse cx="86" cy="71" rx="3.2" ry="4.2" fill="#A87CC0" opacity="0.85"/>
-    <ellipse cx="82" cy="79" rx="3" ry="4" fill="#9B72AA" opacity="0.8"/>
-    <ellipse cx="87" cy="78" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.78"/>
-    <ellipse cx="83" cy="86" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.72"/>
-    <ellipse cx="81" cy="93" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.65"/>
-    <ellipse cx="86" cy="92" rx="2.4" ry="3.2" fill="#C5A8D0" opacity="0.58"/>
-    <ellipse cx="83" cy="100" rx="2.2" ry="3" fill="#9B72AA" opacity="0.48"/>
-    <ellipse cx="82" cy="107" rx="2" ry="2.6" fill="#C5A8D0" opacity="0.36"/>
-    <!-- raceme 2 -->
-    <path d="M110,55 Q109,66 108,78" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-    <ellipse cx="108" cy="81" rx="3.5" ry="4.5" fill="#9B72AA" opacity="0.9"/>
-    <ellipse cx="105" cy="88" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.85"/>
-    <ellipse cx="111" cy="87" rx="3.2" ry="4.2" fill="#A87CC0" opacity="0.85"/>
-    <ellipse cx="107" cy="95" rx="3" ry="4" fill="#9B72AA" opacity="0.8"/>
-    <ellipse cx="112" cy="94" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.74"/>
-    <ellipse cx="108" cy="102" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.68"/>
-    <ellipse cx="106" cy="109" rx="2.6" ry="3.4" fill="#C5A8D0" opacity="0.58"/>
-    <ellipse cx="111" cy="109" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.48"/>
-    <ellipse cx="108" cy="116" rx="2.2" ry="2.8" fill="#B08ABB" opacity="0.36"/>
-    <!-- raceme 3 hanging from main branch -->
-    <path d="M90,90 Q89,102 88,116" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-    <ellipse cx="88" cy="119" rx="3.5" ry="4.5" fill="#8B62A0" opacity="0.88"/>
-    <ellipse cx="85" cy="126" rx="3.2" ry="4.2" fill="#9B72AA" opacity="0.83"/>
-    <ellipse cx="91" cy="125" rx="3.2" ry="4.2" fill="#A87CC0" opacity="0.83"/>
-    <ellipse cx="87" cy="133" rx="3" ry="4" fill="#9B72AA" opacity="0.78"/>
-    <ellipse cx="92" cy="132" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.72"/>
-    <ellipse cx="88" cy="140" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.65"/>
-    <ellipse cx="86" cy="147" rx="2.6" ry="3.4" fill="#9B72AA" opacity="0.56"/>
-    <ellipse cx="91" cy="147" rx="2.4" ry="3.2" fill="#C5A8D0" opacity="0.46"/>
-    <ellipse cx="88" cy="154" rx="2" ry="2.6" fill="#9B72AA" opacity="0.34"/>
-    <!-- leaves -->
-    <ellipse cx="40" cy="28" rx="8" ry="4" fill="#3a6820" opacity="0.55" transform="rotate(-30,40,28)"/>
-    <ellipse cx="68" cy="48" rx="8" ry="4" fill="#3a6820" opacity="0.5" transform="rotate(-10,68,48)"/>
-    <ellipse cx="100" cy="62" rx="7" ry="3.5" fill="#3a6820" opacity="0.48" transform="rotate(15,100,62)"/>
-    <ellipse cx="78" cy="78" rx="7" ry="3.5" fill="#4a7a30" opacity="0.45" transform="rotate(-20,78,78)"/>
-  </svg>
-  <svg aria-hidden="true" style="position:absolute;top:52px;right:0;width:220px;height:260px;z-index:1;pointer-events:none;opacity:0.55;transform:scaleX(-1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 260">
-    <path d="M0,0 Q30,20 55,35 Q80,50 90,70 Q100,90 95,115" fill="none" stroke="#4a2a5a" stroke-width="3" stroke-linecap="round"/>
-    <path d="M55,35 Q70,45 85,42" fill="none" stroke="#4a2a5a" stroke-width="2" stroke-linecap="round"/>
-    <path d="M75,58 Q95,62 110,55" fill="none" stroke="#5a3a6a" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M85,42 Q84,52 83,62" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-    <ellipse cx="83" cy="65" rx="3.5" ry="4.5" fill="#8B62A0" opacity="0.9"/>
-    <ellipse cx="80" cy="72" rx="3.2" ry="4.2" fill="#9B72AA" opacity="0.85"/>
-    <ellipse cx="86" cy="71" rx="3.2" ry="4.2" fill="#A87CC0" opacity="0.85"/>
-    <ellipse cx="82" cy="79" rx="3" ry="4" fill="#9B72AA" opacity="0.8"/>
-    <ellipse cx="87" cy="78" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.78"/>
-    <ellipse cx="83" cy="86" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.72"/>
-    <ellipse cx="81" cy="93" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.65"/>
-    <ellipse cx="86" cy="92" rx="2.4" ry="3.2" fill="#C5A8D0" opacity="0.58"/>
-    <ellipse cx="83" cy="100" rx="2.2" ry="3" fill="#9B72AA" opacity="0.48"/>
-    <ellipse cx="82" cy="107" rx="2" ry="2.6" fill="#C5A8D0" opacity="0.36"/>
-    <path d="M110,55 Q109,66 108,78" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-    <ellipse cx="108" cy="81" rx="3.5" ry="4.5" fill="#9B72AA" opacity="0.9"/>
-    <ellipse cx="105" cy="88" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.85"/>
-    <ellipse cx="111" cy="87" rx="3.2" ry="4.2" fill="#A87CC0" opacity="0.85"/>
-    <ellipse cx="107" cy="95" rx="3" ry="4" fill="#9B72AA" opacity="0.8"/>
-    <ellipse cx="112" cy="94" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.74"/>
-    <ellipse cx="108" cy="102" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.68"/>
-    <ellipse cx="106" cy="109" rx="2.6" ry="3.4" fill="#C5A8D0" opacity="0.58"/>
-    <ellipse cx="111" cy="109" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.48"/>
-    <ellipse cx="108" cy="116" rx="2.2" ry="2.8" fill="#B08ABB" opacity="0.36"/>
-    <path d="M90,90 Q89,102 88,116" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-    <ellipse cx="88" cy="119" rx="3.5" ry="4.5" fill="#8B62A0" opacity="0.88"/>
-    <ellipse cx="85" cy="126" rx="3.2" ry="4.2" fill="#9B72AA" opacity="0.83"/>
-    <ellipse cx="91" cy="125" rx="3.2" ry="4.2" fill="#A87CC0" opacity="0.83"/>
-    <ellipse cx="87" cy="133" rx="3" ry="4" fill="#9B72AA" opacity="0.78"/>
-    <ellipse cx="92" cy="132" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.72"/>
-    <ellipse cx="88" cy="140" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.65"/>
-    <ellipse cx="86" cy="147" rx="2.6" ry="3.4" fill="#9B72AA" opacity="0.56"/>
-    <ellipse cx="91" cy="147" rx="2.4" ry="3.2" fill="#C5A8D0" opacity="0.46"/>
-    <ellipse cx="88" cy="154" rx="2" ry="2.6" fill="#9B72AA" opacity="0.34"/>
-    <ellipse cx="40" cy="28" rx="8" ry="4" fill="#3a6820" opacity="0.55" transform="rotate(-30,40,28)"/>
-    <ellipse cx="68" cy="48" rx="8" ry="4" fill="#3a6820" opacity="0.5" transform="rotate(-10,68,48)"/>
-    <ellipse cx="100" cy="62" rx="7" ry="3.5" fill="#3a6820" opacity="0.48" transform="rotate(15,100,62)"/>
-    <ellipse cx="78" cy="78" rx="7" ry="3.5" fill="#4a7a30" opacity="0.45" transform="rotate(-20,78,78)"/>
-  </svg>
   <div class="hero-inner">
     <h1>Lucy &amp; Cosmin</h1>
-    <!-- Cascading wisteria garland under names -->
-    <div style="margin:-0.1rem auto 0.6rem; pointer-events:none;" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 58" style="width:min(360px,82vw);display:block;margin:0 auto;overflow:visible;">
-        <path d="M15,16 Q90,8 180,12 Q270,16 345,10" fill="none" stroke="#4a2a5a" stroke-width="2" stroke-linecap="round"/>
-        <path d="M15,16 Q40,14 50,14 Q60,16 75,14" fill="none" stroke="#5a3a6a" stroke-width="1.2"/>
-        <path d="M290,11 Q310,12 330,10" fill="none" stroke="#5a3a6a" stroke-width="1.2"/>
-        <!-- sub-branches -->
-        <path d="M48,14 Q47,19 46,27" fill="none" stroke="#7B5090" stroke-width="1.1"/>
-        <path d="M88,12 Q87,18 86,28" fill="none" stroke="#7B5090" stroke-width="1.1"/>
-        <path d="M130,11 Q129,17 128,29" fill="none" stroke="#7B5090" stroke-width="1.1"/>
-        <path d="M180,12 Q179,19 178,32" fill="none" stroke="#7B5090" stroke-width="1.1"/>
-        <path d="M228,12 Q227,18 226,29" fill="none" stroke="#7B5090" stroke-width="1.1"/>
-        <path d="M268,11 Q267,17 266,27" fill="none" stroke="#7B5090" stroke-width="1.1"/>
-        <path d="M308,11 Q307,17 306,27" fill="none" stroke="#7B5090" stroke-width="1.1"/>
-        <!-- raceme clusters -->
-        <ellipse cx="46" cy="30" rx="3" ry="4" fill="#8B62A0" opacity="0.9"/><ellipse cx="43" cy="36" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.82"/><ellipse cx="49" cy="35" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.82"/><ellipse cx="45" cy="42" rx="2.5" ry="3.3" fill="#9B72AA" opacity="0.72"/><ellipse cx="50" cy="41" rx="2.3" ry="3" fill="#C5A8D0" opacity="0.6"/><ellipse cx="46" cy="47" rx="2" ry="2.6" fill="#9B72AA" opacity="0.46"/>
-        <ellipse cx="86" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.9"/><ellipse cx="83" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.83"/><ellipse cx="89" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.83"/><ellipse cx="85" cy="43" rx="2.5" ry="3.3" fill="#9B72AA" opacity="0.73"/><ellipse cx="90" cy="42" rx="2.3" ry="3" fill="#B08ABB" opacity="0.62"/><ellipse cx="86" cy="49" rx="2" ry="2.6" fill="#9B72AA" opacity="0.48"/><ellipse cx="85" cy="54" rx="1.8" ry="2.2" fill="#C5A8D0" opacity="0.35"/>
-        <ellipse cx="128" cy="32" rx="3" ry="4" fill="#8B62A0" opacity="0.9"/><ellipse cx="125" cy="38" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.84"/><ellipse cx="131" cy="37" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.84"/><ellipse cx="127" cy="44" rx="2.5" ry="3.3" fill="#9B72AA" opacity="0.76"/><ellipse cx="132" cy="43" rx="2.3" ry="3" fill="#8B62A0" opacity="0.66"/><ellipse cx="128" cy="50" rx="2.2" ry="2.8" fill="#B08ABB" opacity="0.55"/><ellipse cx="127" cy="56" rx="1.8" ry="2.2" fill="#9B72AA" opacity="0.4"/>
-        <!-- center cluster — longest -->
-        <ellipse cx="178" cy="35" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.92"/><ellipse cx="175" cy="42" rx="3" ry="4" fill="#9B72AA" opacity="0.86"/><ellipse cx="181" cy="41" rx="3" ry="4" fill="#A87CC0" opacity="0.86"/><ellipse cx="177" cy="49" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/><ellipse cx="182" cy="48" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.74"/><ellipse cx="178" cy="55" rx="2.4" ry="3.2" fill="#B08ABB" opacity="0.64"/><ellipse cx="177" cy="62" rx="2" ry="2.6" fill="#C5A8D0" opacity="0.48"/>
-        <ellipse cx="226" cy="32" rx="3" ry="4" fill="#9B72AA" opacity="0.9"/><ellipse cx="223" cy="38" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.83"/><ellipse cx="229" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.83"/><ellipse cx="225" cy="44" rx="2.5" ry="3.3" fill="#9B72AA" opacity="0.74"/><ellipse cx="230" cy="43" rx="2.3" ry="3" fill="#B08ABB" opacity="0.63"/><ellipse cx="226" cy="50" rx="2.2" ry="2.8" fill="#9B72AA" opacity="0.5"/><ellipse cx="225" cy="56" rx="1.8" ry="2.2" fill="#C5A8D0" opacity="0.36"/>
-        <ellipse cx="266" cy="30" rx="3" ry="4" fill="#8B62A0" opacity="0.88"/><ellipse cx="263" cy="36" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.82"/><ellipse cx="269" cy="35" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.82"/><ellipse cx="265" cy="42" rx="2.5" ry="3.3" fill="#9B72AA" opacity="0.72"/><ellipse cx="270" cy="41" rx="2.3" ry="3" fill="#B08ABB" opacity="0.6"/><ellipse cx="266" cy="48" rx="2" ry="2.6" fill="#9B72AA" opacity="0.46"/>
-        <ellipse cx="306" cy="30" rx="3" ry="4" fill="#9B72AA" opacity="0.88"/><ellipse cx="303" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.82"/><ellipse cx="309" cy="35" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.82"/><ellipse cx="305" cy="42" rx="2.5" ry="3.3" fill="#9B72AA" opacity="0.7"/><ellipse cx="310" cy="41" rx="2.3" ry="3" fill="#C5A8D0" opacity="0.58"/><ellipse cx="306" cy="47" rx="2" ry="2.5" fill="#9B72AA" opacity="0.43"/>
-        <!-- leaves -->
-        <ellipse cx="66" cy="13" rx="6" ry="3" fill="#3a6820" opacity="0.5" transform="rotate(-12,66,13)"/>
-        <ellipse cx="108" cy="11" rx="6" ry="3" fill="#4a7a30" opacity="0.48" transform="rotate(10,108,11)"/>
-        <ellipse cx="154" cy="11" rx="6" ry="3" fill="#3a6820" opacity="0.5" transform="rotate(-8,154,11)"/>
-        <ellipse cx="204" cy="12" rx="6" ry="3" fill="#4a7a30" opacity="0.48" transform="rotate(12,204,12)"/>
-        <ellipse cx="246" cy="11" rx="6" ry="3" fill="#3a6820" opacity="0.5" transform="rotate(-10,246,11)"/>
-        <ellipse cx="286" cy="11" rx="6" ry="3" fill="#4a7a30" opacity="0.46" transform="rotate(8,286,11)"/>
-      </svg>
-    </div>
 
     <div class="hero-details">
       <p data-i18n="hero_date">July 17, 2027</p>
@@ -689,92 +560,6 @@ nav {
 <!-- Our Story -->
 <section id="story" hidden aria-labelledby="story-heading">
   <h2 id="story-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_story">Our Story</span></h2>
-  <div style="margin:-0.4rem auto 1rem; pointer-events:none;" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" style="width:min(320px,75vw);display:block;margin:0 auto;overflow:visible;">
-      <!-- main horizontal branch -->
-      <path d="M20,18 Q80,12 160,14 Q240,16 300,12" fill="none" stroke="#6B3F7A" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- sub-branches dropping down -->
-      <path d="M45,16 Q44,20 43,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M80,13 Q79,18 78,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M115,13 Q114,19 113,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M160,14 Q159,20 158,32" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M200,14 Q199,20 198,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M238,13 Q237,19 236,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M272,12 Q271,18 270,27" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <!-- raceme cluster 1 — left -->
-      <ellipse cx="43" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="40" cy="37" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="46" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="42" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="47" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="44" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="41" cy="54" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="46" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 2 -->
-      <ellipse cx="78" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="75" cy="37" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.8"/>
-      <ellipse cx="81" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="77" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="82" cy="42" rx="2.5" ry="3.5" fill="#A87CC0" opacity="0.7"/>
-      <ellipse cx="79" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="76" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="81" cy="56" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <ellipse cx="78" cy="62" rx="1.6" ry="2" fill="#B08ABB" opacity="0.35"/>
-      <!-- raceme cluster 3 — tallest center-left -->
-      <ellipse cx="113" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="110" cy="39" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.82"/>
-      <ellipse cx="116" cy="38" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="112" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="117" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="114" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.68"/>
-      <ellipse cx="111" cy="57" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.6"/>
-      <ellipse cx="116" cy="57" rx="2" ry="2.8" fill="#9B72AA" opacity="0.52"/>
-      <ellipse cx="113" cy="63" rx="1.8" ry="2.4" fill="#B08ABB" opacity="0.4"/>
-      <!-- raceme cluster 4 — center, longest -->
-      <ellipse cx="158" cy="35" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.88"/>
-      <ellipse cx="154" cy="41" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="161" cy="41" rx="3" ry="4" fill="#A87CC0" opacity="0.83"/>
-      <ellipse cx="156" cy="48" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="162" cy="47" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="159" cy="54" rx="2.6" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="155" cy="60" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="162" cy="60" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.58"/>
-      <ellipse cx="158" cy="66" rx="2" ry="2.6" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 5 -->
-      <ellipse cx="198" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="195" cy="39" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="201" cy="38" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="197" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="202" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="199" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="196" cy="57" rx="2.2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="202" cy="57" rx="2" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 6 -->
-      <ellipse cx="236" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="233" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="239" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="235" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="240" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="237" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="234" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="239" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 7 — right -->
-      <ellipse cx="270" cy="30" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="267" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="273" cy="35" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="269" cy="42" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="274" cy="41" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="271" cy="48" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="268" cy="53" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <!-- small leaves along branch -->
-      <ellipse cx="60" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-15,60,14)"/>
-      <ellipse cx="97" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(10,97,13)"/>
-      <ellipse cx="138" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-8,138,13)"/>
-      <ellipse cx="180" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(12,180,14)"/>
-      <ellipse cx="218" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-10,218,13)"/>
-      <ellipse cx="255" cy="12" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(8,255,12)"/>
-    </svg>
-  </div>
   <p class="section-lead" data-i18n="story_lead">We are so happy you are part of this chapter.</p>  <div class="story-layout">
     <figure class="story-frame">
       <img src="our-story.jpg" alt="Lucy and Cosmin" class="story-img" width="640" height="427" loading="eager" decoding="async" fetchpriority="high" data-i18n-alt="story_img_alt">
@@ -792,92 +577,6 @@ nav {
 <!-- Photos -->
 <section id="photos" hidden aria-labelledby="photos-heading">
   <h2 id="photos-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_photos">Photos</span></h2>
-  <div style="margin:-0.4rem auto 1rem; pointer-events:none;" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" style="width:min(320px,75vw);display:block;margin:0 auto;overflow:visible;">
-      <!-- main horizontal branch -->
-      <path d="M20,18 Q80,12 160,14 Q240,16 300,12" fill="none" stroke="#6B3F7A" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- sub-branches dropping down -->
-      <path d="M45,16 Q44,20 43,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M80,13 Q79,18 78,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M115,13 Q114,19 113,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M160,14 Q159,20 158,32" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M200,14 Q199,20 198,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M238,13 Q237,19 236,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M272,12 Q271,18 270,27" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <!-- raceme cluster 1 — left -->
-      <ellipse cx="43" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="40" cy="37" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="46" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="42" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="47" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="44" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="41" cy="54" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="46" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 2 -->
-      <ellipse cx="78" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="75" cy="37" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.8"/>
-      <ellipse cx="81" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="77" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="82" cy="42" rx="2.5" ry="3.5" fill="#A87CC0" opacity="0.7"/>
-      <ellipse cx="79" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="76" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="81" cy="56" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <ellipse cx="78" cy="62" rx="1.6" ry="2" fill="#B08ABB" opacity="0.35"/>
-      <!-- raceme cluster 3 — tallest center-left -->
-      <ellipse cx="113" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="110" cy="39" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.82"/>
-      <ellipse cx="116" cy="38" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="112" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="117" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="114" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.68"/>
-      <ellipse cx="111" cy="57" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.6"/>
-      <ellipse cx="116" cy="57" rx="2" ry="2.8" fill="#9B72AA" opacity="0.52"/>
-      <ellipse cx="113" cy="63" rx="1.8" ry="2.4" fill="#B08ABB" opacity="0.4"/>
-      <!-- raceme cluster 4 — center, longest -->
-      <ellipse cx="158" cy="35" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.88"/>
-      <ellipse cx="154" cy="41" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="161" cy="41" rx="3" ry="4" fill="#A87CC0" opacity="0.83"/>
-      <ellipse cx="156" cy="48" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="162" cy="47" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="159" cy="54" rx="2.6" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="155" cy="60" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="162" cy="60" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.58"/>
-      <ellipse cx="158" cy="66" rx="2" ry="2.6" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 5 -->
-      <ellipse cx="198" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="195" cy="39" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="201" cy="38" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="197" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="202" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="199" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="196" cy="57" rx="2.2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="202" cy="57" rx="2" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 6 -->
-      <ellipse cx="236" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="233" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="239" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="235" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="240" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="237" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="234" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="239" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 7 — right -->
-      <ellipse cx="270" cy="30" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="267" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="273" cy="35" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="269" cy="42" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="274" cy="41" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="271" cy="48" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="268" cy="53" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <!-- small leaves along branch -->
-      <ellipse cx="60" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-15,60,14)"/>
-      <ellipse cx="97" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(10,97,13)"/>
-      <ellipse cx="138" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-8,138,13)"/>
-      <ellipse cx="180" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(12,180,14)"/>
-      <ellipse cx="218" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-10,218,13)"/>
-      <ellipse cx="255" cy="12" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(8,255,12)"/>
-    </svg>
-  </div>
   <p class="section-lead" data-i18n="photos_lead">A few favourites — click to enlarge.</p>  <div class="grid" id="photo-grid" data-i18n-aria="photos_grid_aria" aria-label="Photo gallery"></div>
   <div class="photo-pagination" id="photo-pagination">
     <button class="page-btn active" data-page="1">Page 1</button>
@@ -900,97 +599,12 @@ nav {
 <!-- Schedule -->
 <section id="schedule" hidden aria-labelledby="schedule-heading">
   <h2 id="schedule-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="sch_page_title">Weekend Schedule</span></h2>
-  <div style="margin:-0.4rem auto 1rem; pointer-events:none;" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" style="width:min(320px,75vw);display:block;margin:0 auto;overflow:visible;">
-      <!-- main horizontal branch -->
-      <path d="M20,18 Q80,12 160,14 Q240,16 300,12" fill="none" stroke="#6B3F7A" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- sub-branches dropping down -->
-      <path d="M45,16 Q44,20 43,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M80,13 Q79,18 78,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M115,13 Q114,19 113,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M160,14 Q159,20 158,32" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M200,14 Q199,20 198,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M238,13 Q237,19 236,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M272,12 Q271,18 270,27" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <!-- raceme cluster 1 — left -->
-      <ellipse cx="43" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="40" cy="37" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="46" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="42" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="47" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="44" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="41" cy="54" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="46" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 2 -->
-      <ellipse cx="78" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="75" cy="37" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.8"/>
-      <ellipse cx="81" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="77" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="82" cy="42" rx="2.5" ry="3.5" fill="#A87CC0" opacity="0.7"/>
-      <ellipse cx="79" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="76" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="81" cy="56" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <ellipse cx="78" cy="62" rx="1.6" ry="2" fill="#B08ABB" opacity="0.35"/>
-      <!-- raceme cluster 3 — tallest center-left -->
-      <ellipse cx="113" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="110" cy="39" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.82"/>
-      <ellipse cx="116" cy="38" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="112" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="117" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="114" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.68"/>
-      <ellipse cx="111" cy="57" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.6"/>
-      <ellipse cx="116" cy="57" rx="2" ry="2.8" fill="#9B72AA" opacity="0.52"/>
-      <ellipse cx="113" cy="63" rx="1.8" ry="2.4" fill="#B08ABB" opacity="0.4"/>
-      <!-- raceme cluster 4 — center, longest -->
-      <ellipse cx="158" cy="35" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.88"/>
-      <ellipse cx="154" cy="41" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="161" cy="41" rx="3" ry="4" fill="#A87CC0" opacity="0.83"/>
-      <ellipse cx="156" cy="48" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="162" cy="47" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="159" cy="54" rx="2.6" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="155" cy="60" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="162" cy="60" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.58"/>
-      <ellipse cx="158" cy="66" rx="2" ry="2.6" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 5 -->
-      <ellipse cx="198" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="195" cy="39" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="201" cy="38" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="197" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="202" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="199" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="196" cy="57" rx="2.2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="202" cy="57" rx="2" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 6 -->
-      <ellipse cx="236" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="233" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="239" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="235" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="240" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="237" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="234" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="239" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 7 — right -->
-      <ellipse cx="270" cy="30" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="267" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="273" cy="35" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="269" cy="42" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="274" cy="41" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="271" cy="48" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="268" cy="53" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <!-- small leaves along branch -->
-      <ellipse cx="60" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-15,60,14)"/>
-      <ellipse cx="97" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(10,97,13)"/>
-      <ellipse cx="138" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-8,138,13)"/>
-      <ellipse cx="180" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(12,180,14)"/>
-      <ellipse cx="218" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-10,218,13)"/>
-      <ellipse cx="255" cy="12" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(8,255,12)"/>
-    </svg>
-  </div>
   <p class="section-lead" data-i18n="schedule_lead">We can't wait to celebrate with you.</p>  <div class="schedule-box">
     <div class="content-card">
       <strong data-i18n="sch_fri">Friday, July 16</strong>
       <p style="margin:0.5rem 0 0;"><strong data-i18n="sch_fri_welcome">Welcome Drinks</strong></p>
       <p style="margin:0.25rem 0 0;"><strong data-i18n="sch_fri_time">7:30 pm @ Bar Savart</strong></p>
+      <p style="margin:0.25rem 0 0; font-size:0.88rem; opacity:0.75;">📍 Strada George Enescu 2-4, București</p>
       <p style="margin:0.75rem 0 0;" data-i18n="sch_fri_p1">Come join us for drinks the night before the wedding!</p>
       <p style="margin:0.5rem 0 0;" data-i18n="sch_fri_p2">This will be an opportunity for more guests to mix and mingle before the big day!</p>
     </div>
@@ -998,19 +612,44 @@ nav {
       <strong data-i18n="sch_sat">Saturday, July 17</strong>
       <p style="margin:0.5rem 0 0;"><strong data-i18n="sch_sat_cer">Catholic Ceremony</strong></p>
       <p style="margin:0.25rem 0 0;"><strong data-i18n="sch_sat_church">3:00 pm @ St. Joseph's Cathedral</strong></p>
-      <p style="margin:0.75rem 0 0;" data-i18n="sch_sat_shuttle">St. Joseph's Cathedral is located at Strada General Berthelot 19 — approximately a 10-minute walk from the InterContinental AthéNéE Palace. Please plan to arrive by 2:30 pm, about 30 minutes before the ceremony begins.</p>
+      <p style="margin:0.25rem 0 0; font-size:0.88rem; opacity:0.75;">📍 Strada General H. M. Berthelot 19, București</p>
+      <p style="margin:0.75rem 0 0;" data-i18n="sch_sat_shuttle">St. Joseph's Cathedral is approximately a 7-minute walk from the InterContinental AthéNéE Palace. Please plan to arrive by 2:30 pm, about 30 minutes before the ceremony begins.</p>
 
       <hr style="border:none;border-top:1px solid rgba(75,0,31,0.18);margin:1rem 0;">
 
       <p style="margin:0;"><strong data-i18n="sch_sat_cock">Cocktail Hour</strong></p>
       <p style="margin:0.25rem 0 0;"><strong data-i18n="sch_sat_cock_loc">6:00 pm @ InterContinental AthéNéE Palace Bucharest — 1st floor Terrace</strong></p>
+      <p style="margin:0.25rem 0 0; font-size:0.88rem; opacity:0.75;">📍 Strada Episcopiei 1-3, București</p>
       <p style="margin:0.75rem 0 0;" data-i18n="sch_sat_cock_p">Canapés and refreshments will be served.</p>
 
       <hr style="border:none;border-top:1px solid rgba(75,0,31,0.18);margin:1rem 0;">
 
       <p style="margin:0;"><strong data-i18n="sch_sat_rec">Reception</strong></p>
       <p style="margin:0.25rem 0 0;"><strong data-i18n="sch_sat_rec_loc">7:00 pm @ InterContinental AthéNéE Palace Bucharest — Diplomat Ballroom</strong></p>
+      <p style="margin:0.25rem 0 0; font-size:0.88rem; opacity:0.75;">📍 Strada Episcopiei 1-3, București</p>
       <p style="margin:0.75rem 0 0;" data-i18n="sch_sat_rec_p">Enjoy a three course meal, cake cutting, and dancing the night away with us!</p>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div style="margin-top:2rem; max-width:42rem; margin-left:auto; margin-right:auto;">
+    <p style="font-size:0.85rem; opacity:0.7; margin:0 0 0.6rem; letter-spacing:0.06em; text-transform:uppercase; text-align:center;">Locations on the map</p>
+    <div style="border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.15);">
+      <iframe
+        title="Wedding locations in Bucharest"
+        width="100%"
+        height="420"
+        style="border:0; display:block;"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps?q=InterContinental+Athenee+Palace+Bucharest,+Strada+Episcopiei+1-3&output=embed">
+      </iframe>
+    </div>
+    <!-- Individual map links -->
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.75rem; justify-content:center;">
+      <a href="https://maps.google.com/?q=InterContinental+AthéNéE+Palace,+Strada+Episcopiei+1-3,+Bucharest" target="_blank" rel="noopener noreferrer" style="font-family:inherit; font-size:0.82rem; color:rgba(255,255,255,0.75); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:6px 14px; border-radius:999px; text-decoration:none;">📍 InterContinental</a>
+      <a href="https://maps.google.com/?q=Saint+Joseph+Catholic+Cathedral,+Strada+General+Berthelot+19,+Bucharest" target="_blank" rel="noopener noreferrer" style="font-family:inherit; font-size:0.82rem; color:rgba(255,255,255,0.75); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:6px 14px; border-radius:999px; text-decoration:none;">📍 St. Joseph's Cathedral</a>
+      <a href="https://maps.google.com/?q=Bar+Savart,+Strada+George+Enescu+2-4,+Bucharest" target="_blank" rel="noopener noreferrer" style="font-family:inherit; font-size:0.82rem; color:rgba(255,255,255,0.75); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:6px 14px; border-radius:999px; text-decoration:none;">📍 Bar Savart</a>
     </div>
   </div>
 
@@ -1019,92 +658,6 @@ nav {
 <!-- Travel -->
 <section id="travel" hidden aria-labelledby="travel-heading">
   <h2 id="travel-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="travel_h2">Travel &amp; Lodging</span></h2>
-  <div style="margin:-0.4rem auto 1rem; pointer-events:none;" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" style="width:min(320px,75vw);display:block;margin:0 auto;overflow:visible;">
-      <!-- main horizontal branch -->
-      <path d="M20,18 Q80,12 160,14 Q240,16 300,12" fill="none" stroke="#6B3F7A" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- sub-branches dropping down -->
-      <path d="M45,16 Q44,20 43,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M80,13 Q79,18 78,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M115,13 Q114,19 113,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M160,14 Q159,20 158,32" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M200,14 Q199,20 198,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M238,13 Q237,19 236,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M272,12 Q271,18 270,27" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <!-- raceme cluster 1 — left -->
-      <ellipse cx="43" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="40" cy="37" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="46" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="42" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="47" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="44" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="41" cy="54" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="46" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 2 -->
-      <ellipse cx="78" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="75" cy="37" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.8"/>
-      <ellipse cx="81" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="77" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="82" cy="42" rx="2.5" ry="3.5" fill="#A87CC0" opacity="0.7"/>
-      <ellipse cx="79" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="76" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="81" cy="56" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <ellipse cx="78" cy="62" rx="1.6" ry="2" fill="#B08ABB" opacity="0.35"/>
-      <!-- raceme cluster 3 — tallest center-left -->
-      <ellipse cx="113" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="110" cy="39" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.82"/>
-      <ellipse cx="116" cy="38" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="112" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="117" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="114" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.68"/>
-      <ellipse cx="111" cy="57" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.6"/>
-      <ellipse cx="116" cy="57" rx="2" ry="2.8" fill="#9B72AA" opacity="0.52"/>
-      <ellipse cx="113" cy="63" rx="1.8" ry="2.4" fill="#B08ABB" opacity="0.4"/>
-      <!-- raceme cluster 4 — center, longest -->
-      <ellipse cx="158" cy="35" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.88"/>
-      <ellipse cx="154" cy="41" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="161" cy="41" rx="3" ry="4" fill="#A87CC0" opacity="0.83"/>
-      <ellipse cx="156" cy="48" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="162" cy="47" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="159" cy="54" rx="2.6" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="155" cy="60" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="162" cy="60" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.58"/>
-      <ellipse cx="158" cy="66" rx="2" ry="2.6" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 5 -->
-      <ellipse cx="198" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="195" cy="39" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="201" cy="38" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="197" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="202" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="199" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="196" cy="57" rx="2.2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="202" cy="57" rx="2" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 6 -->
-      <ellipse cx="236" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="233" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="239" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="235" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="240" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="237" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="234" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="239" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 7 — right -->
-      <ellipse cx="270" cy="30" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="267" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="273" cy="35" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="269" cy="42" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="274" cy="41" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="271" cy="48" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="268" cy="53" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <!-- small leaves along branch -->
-      <ellipse cx="60" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-15,60,14)"/>
-      <ellipse cx="97" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(10,97,13)"/>
-      <ellipse cx="138" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-8,138,13)"/>
-      <ellipse cx="180" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(12,180,14)"/>
-      <ellipse cx="218" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-10,218,13)"/>
-      <ellipse cx="255" cy="12" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(8,255,12)"/>
-    </svg>
-  </div>
   <p class="section-lead" data-i18n="travel_lead">Bucharest Henri Coandă (OTP) is the main international airport, about 30–45 minutes from the city centre by car or taxi.</p>  <div class="content-card">
     <p data-i18n-html="travel_stay"><strong>Where to stay</strong> — Add 2–3 hotel suggestions near your venue or Old Town, with booking links if you have group rates.</p>
     <p data-i18n-html="travel_get"><strong>Getting around</strong> — Taxis and ride-hailing (e.g. Bolt) are widely used; the metro is useful for central sights.</p>
@@ -1114,92 +667,6 @@ nav {
 <!-- Things -->
 <section id="things" hidden aria-labelledby="things-heading">
   <h2 id="things-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_things">Things To Do</span></h2>
-  <div style="margin:-0.4rem auto 1rem; pointer-events:none;" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" style="width:min(320px,75vw);display:block;margin:0 auto;overflow:visible;">
-      <!-- main horizontal branch -->
-      <path d="M20,18 Q80,12 160,14 Q240,16 300,12" fill="none" stroke="#6B3F7A" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- sub-branches dropping down -->
-      <path d="M45,16 Q44,20 43,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M80,13 Q79,18 78,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M115,13 Q114,19 113,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M160,14 Q159,20 158,32" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M200,14 Q199,20 198,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M238,13 Q237,19 236,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M272,12 Q271,18 270,27" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <!-- raceme cluster 1 — left -->
-      <ellipse cx="43" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="40" cy="37" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="46" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="42" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="47" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="44" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="41" cy="54" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="46" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 2 -->
-      <ellipse cx="78" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="75" cy="37" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.8"/>
-      <ellipse cx="81" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="77" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="82" cy="42" rx="2.5" ry="3.5" fill="#A87CC0" opacity="0.7"/>
-      <ellipse cx="79" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="76" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="81" cy="56" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <ellipse cx="78" cy="62" rx="1.6" ry="2" fill="#B08ABB" opacity="0.35"/>
-      <!-- raceme cluster 3 — tallest center-left -->
-      <ellipse cx="113" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="110" cy="39" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.82"/>
-      <ellipse cx="116" cy="38" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="112" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="117" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="114" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.68"/>
-      <ellipse cx="111" cy="57" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.6"/>
-      <ellipse cx="116" cy="57" rx="2" ry="2.8" fill="#9B72AA" opacity="0.52"/>
-      <ellipse cx="113" cy="63" rx="1.8" ry="2.4" fill="#B08ABB" opacity="0.4"/>
-      <!-- raceme cluster 4 — center, longest -->
-      <ellipse cx="158" cy="35" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.88"/>
-      <ellipse cx="154" cy="41" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="161" cy="41" rx="3" ry="4" fill="#A87CC0" opacity="0.83"/>
-      <ellipse cx="156" cy="48" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="162" cy="47" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="159" cy="54" rx="2.6" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="155" cy="60" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="162" cy="60" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.58"/>
-      <ellipse cx="158" cy="66" rx="2" ry="2.6" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 5 -->
-      <ellipse cx="198" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="195" cy="39" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="201" cy="38" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="197" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="202" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="199" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="196" cy="57" rx="2.2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="202" cy="57" rx="2" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 6 -->
-      <ellipse cx="236" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="233" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="239" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="235" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="240" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="237" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="234" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="239" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 7 — right -->
-      <ellipse cx="270" cy="30" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="267" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="273" cy="35" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="269" cy="42" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="274" cy="41" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="271" cy="48" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="268" cy="53" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <!-- small leaves along branch -->
-      <ellipse cx="60" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-15,60,14)"/>
-      <ellipse cx="97" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(10,97,13)"/>
-      <ellipse cx="138" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-8,138,13)"/>
-      <ellipse cx="180" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(12,180,14)"/>
-      <ellipse cx="218" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-10,218,13)"/>
-      <ellipse cx="255" cy="12" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(8,255,12)"/>
-    </svg>
-  </div>
   <p class="things-subhead" data-i18n="things_sub">We have an exciting week of activities leading up to the wedding!</p>
 
   <div class="content-card">
@@ -1253,92 +720,6 @@ nav {
 <!-- FAQs -->
 <section id="faq" hidden aria-labelledby="faq-heading">
   <h2 id="faq-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_faq">FAQs</span></h2>
-  <div style="margin:-0.4rem auto 1rem; pointer-events:none;" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" style="width:min(320px,75vw);display:block;margin:0 auto;overflow:visible;">
-      <!-- main horizontal branch -->
-      <path d="M20,18 Q80,12 160,14 Q240,16 300,12" fill="none" stroke="#6B3F7A" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- sub-branches dropping down -->
-      <path d="M45,16 Q44,20 43,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M80,13 Q79,18 78,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M115,13 Q114,19 113,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M160,14 Q159,20 158,32" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M200,14 Q199,20 198,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M238,13 Q237,19 236,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M272,12 Q271,18 270,27" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <!-- raceme cluster 1 — left -->
-      <ellipse cx="43" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="40" cy="37" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="46" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="42" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="47" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="44" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="41" cy="54" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="46" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 2 -->
-      <ellipse cx="78" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="75" cy="37" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.8"/>
-      <ellipse cx="81" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="77" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="82" cy="42" rx="2.5" ry="3.5" fill="#A87CC0" opacity="0.7"/>
-      <ellipse cx="79" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="76" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="81" cy="56" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <ellipse cx="78" cy="62" rx="1.6" ry="2" fill="#B08ABB" opacity="0.35"/>
-      <!-- raceme cluster 3 — tallest center-left -->
-      <ellipse cx="113" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="110" cy="39" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.82"/>
-      <ellipse cx="116" cy="38" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="112" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="117" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="114" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.68"/>
-      <ellipse cx="111" cy="57" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.6"/>
-      <ellipse cx="116" cy="57" rx="2" ry="2.8" fill="#9B72AA" opacity="0.52"/>
-      <ellipse cx="113" cy="63" rx="1.8" ry="2.4" fill="#B08ABB" opacity="0.4"/>
-      <!-- raceme cluster 4 — center, longest -->
-      <ellipse cx="158" cy="35" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.88"/>
-      <ellipse cx="154" cy="41" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="161" cy="41" rx="3" ry="4" fill="#A87CC0" opacity="0.83"/>
-      <ellipse cx="156" cy="48" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="162" cy="47" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="159" cy="54" rx="2.6" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="155" cy="60" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="162" cy="60" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.58"/>
-      <ellipse cx="158" cy="66" rx="2" ry="2.6" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 5 -->
-      <ellipse cx="198" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="195" cy="39" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="201" cy="38" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="197" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="202" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="199" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="196" cy="57" rx="2.2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="202" cy="57" rx="2" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 6 -->
-      <ellipse cx="236" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="233" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="239" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="235" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="240" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="237" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="234" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="239" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 7 — right -->
-      <ellipse cx="270" cy="30" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="267" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="273" cy="35" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="269" cy="42" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="274" cy="41" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="271" cy="48" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="268" cy="53" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <!-- small leaves along branch -->
-      <ellipse cx="60" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-15,60,14)"/>
-      <ellipse cx="97" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(10,97,13)"/>
-      <ellipse cx="138" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-8,138,13)"/>
-      <ellipse cx="180" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(12,180,14)"/>
-      <ellipse cx="218" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-10,218,13)"/>
-      <ellipse cx="255" cy="12" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(8,255,12)"/>
-    </svg>
-  </div>
 
   <details class="faq-item">
     <summary class="faq-question" data-i18n="faq_q1">What is the best way to get to Bucharest?</summary>
@@ -1407,92 +788,6 @@ nav {
 <!-- Registry -->
 <section id="registry" hidden aria-labelledby="registry-heading">
   <h2 id="registry-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_registry">Registry</span></h2>
-  <div style="margin:-0.4rem auto 1rem; pointer-events:none;" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" style="width:min(320px,75vw);display:block;margin:0 auto;overflow:visible;">
-      <!-- main horizontal branch -->
-      <path d="M20,18 Q80,12 160,14 Q240,16 300,12" fill="none" stroke="#6B3F7A" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- sub-branches dropping down -->
-      <path d="M45,16 Q44,20 43,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M80,13 Q79,18 78,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M115,13 Q114,19 113,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M160,14 Q159,20 158,32" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M200,14 Q199,20 198,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M238,13 Q237,19 236,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M272,12 Q271,18 270,27" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <!-- raceme cluster 1 — left -->
-      <ellipse cx="43" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="40" cy="37" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="46" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="42" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="47" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="44" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="41" cy="54" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="46" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 2 -->
-      <ellipse cx="78" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="75" cy="37" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.8"/>
-      <ellipse cx="81" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="77" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="82" cy="42" rx="2.5" ry="3.5" fill="#A87CC0" opacity="0.7"/>
-      <ellipse cx="79" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="76" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="81" cy="56" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <ellipse cx="78" cy="62" rx="1.6" ry="2" fill="#B08ABB" opacity="0.35"/>
-      <!-- raceme cluster 3 — tallest center-left -->
-      <ellipse cx="113" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="110" cy="39" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.82"/>
-      <ellipse cx="116" cy="38" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="112" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="117" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="114" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.68"/>
-      <ellipse cx="111" cy="57" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.6"/>
-      <ellipse cx="116" cy="57" rx="2" ry="2.8" fill="#9B72AA" opacity="0.52"/>
-      <ellipse cx="113" cy="63" rx="1.8" ry="2.4" fill="#B08ABB" opacity="0.4"/>
-      <!-- raceme cluster 4 — center, longest -->
-      <ellipse cx="158" cy="35" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.88"/>
-      <ellipse cx="154" cy="41" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="161" cy="41" rx="3" ry="4" fill="#A87CC0" opacity="0.83"/>
-      <ellipse cx="156" cy="48" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="162" cy="47" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="159" cy="54" rx="2.6" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="155" cy="60" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="162" cy="60" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.58"/>
-      <ellipse cx="158" cy="66" rx="2" ry="2.6" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 5 -->
-      <ellipse cx="198" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="195" cy="39" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="201" cy="38" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="197" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="202" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="199" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="196" cy="57" rx="2.2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="202" cy="57" rx="2" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 6 -->
-      <ellipse cx="236" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="233" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="239" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="235" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="240" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="237" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="234" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="239" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 7 — right -->
-      <ellipse cx="270" cy="30" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="267" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="273" cy="35" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="269" cy="42" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="274" cy="41" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="271" cy="48" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="268" cy="53" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <!-- small leaves along branch -->
-      <ellipse cx="60" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-15,60,14)"/>
-      <ellipse cx="97" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(10,97,13)"/>
-      <ellipse cx="138" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-8,138,13)"/>
-      <ellipse cx="180" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(12,180,14)"/>
-      <ellipse cx="218" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-10,218,13)"/>
-      <ellipse cx="255" cy="12" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(8,255,12)"/>
-    </svg>
-  </div>
   <p class="section-lead" data-i18n="reg_lead">Your presence is the best gift. If you would like to give something, we have registered at:</p>  <div class="content-card">
     <p style="margin:0;" data-i18n-html="reg_placeholder">Replace this block with links to your registry (e.g. John Lewis, Zola, honeymoon fund). Example: <a href="#">Registry link</a></p>
   </div>
@@ -1501,92 +796,6 @@ nav {
 <!-- RSVP -->
 <section id="rsvp" hidden aria-labelledby="rsvp-heading">
   <h2 id="rsvp-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_rsvp">RSVP</span></h2>
-  <div style="margin:-0.4rem auto 1rem; pointer-events:none;" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" style="width:min(320px,75vw);display:block;margin:0 auto;overflow:visible;">
-      <!-- main horizontal branch -->
-      <path d="M20,18 Q80,12 160,14 Q240,16 300,12" fill="none" stroke="#6B3F7A" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- sub-branches dropping down -->
-      <path d="M45,16 Q44,20 43,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M80,13 Q79,18 78,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M115,13 Q114,19 113,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M160,14 Q159,20 158,32" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M200,14 Q199,20 198,30" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M238,13 Q237,19 236,28" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <path d="M272,12 Q271,18 270,27" fill="none" stroke="#7B5090" stroke-width="1.2"/>
-      <!-- raceme cluster 1 — left -->
-      <ellipse cx="43" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="40" cy="37" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="46" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="42" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="47" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="44" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="41" cy="54" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="46" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 2 -->
-      <ellipse cx="78" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="75" cy="37" rx="2.8" ry="3.8" fill="#B08ABB" opacity="0.8"/>
-      <ellipse cx="81" cy="36" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="77" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="82" cy="42" rx="2.5" ry="3.5" fill="#A87CC0" opacity="0.7"/>
-      <ellipse cx="79" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="76" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="81" cy="56" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <ellipse cx="78" cy="62" rx="1.6" ry="2" fill="#B08ABB" opacity="0.35"/>
-      <!-- raceme cluster 3 — tallest center-left -->
-      <ellipse cx="113" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="110" cy="39" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.82"/>
-      <ellipse cx="116" cy="38" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="112" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="117" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="114" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.68"/>
-      <ellipse cx="111" cy="57" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.6"/>
-      <ellipse cx="116" cy="57" rx="2" ry="2.8" fill="#9B72AA" opacity="0.52"/>
-      <ellipse cx="113" cy="63" rx="1.8" ry="2.4" fill="#B08ABB" opacity="0.4"/>
-      <!-- raceme cluster 4 — center, longest -->
-      <ellipse cx="158" cy="35" rx="3.2" ry="4.2" fill="#8B62A0" opacity="0.88"/>
-      <ellipse cx="154" cy="41" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="161" cy="41" rx="3" ry="4" fill="#A87CC0" opacity="0.83"/>
-      <ellipse cx="156" cy="48" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="162" cy="47" rx="2.8" ry="3.8" fill="#9B72AA" opacity="0.78"/>
-      <ellipse cx="159" cy="54" rx="2.6" ry="3.5" fill="#B08ABB" opacity="0.72"/>
-      <ellipse cx="155" cy="60" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="162" cy="60" rx="2.2" ry="3" fill="#C5A8D0" opacity="0.58"/>
-      <ellipse cx="158" cy="66" rx="2" ry="2.6" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 5 -->
-      <ellipse cx="198" cy="33" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="195" cy="39" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="201" cy="38" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="197" cy="45" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="202" cy="44" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="199" cy="51" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="196" cy="57" rx="2.2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="202" cy="57" rx="2" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 6 -->
-      <ellipse cx="236" cy="31" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="233" cy="37" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="239" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="235" cy="43" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="240" cy="42" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="237" cy="49" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="234" cy="55" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <ellipse cx="239" cy="55" rx="1.8" ry="2.5" fill="#9B72AA" opacity="0.45"/>
-      <!-- raceme cluster 7 — right -->
-      <ellipse cx="270" cy="30" rx="3" ry="4" fill="#9B72AA" opacity="0.85"/>
-      <ellipse cx="267" cy="36" rx="2.8" ry="3.8" fill="#A87CC0" opacity="0.8"/>
-      <ellipse cx="273" cy="35" rx="2.8" ry="3.8" fill="#8B62A0" opacity="0.8"/>
-      <ellipse cx="269" cy="42" rx="2.6" ry="3.5" fill="#9B72AA" opacity="0.75"/>
-      <ellipse cx="274" cy="41" rx="2.5" ry="3.5" fill="#B08ABB" opacity="0.7"/>
-      <ellipse cx="271" cy="48" rx="2.4" ry="3.2" fill="#9B72AA" opacity="0.65"/>
-      <ellipse cx="268" cy="53" rx="2" ry="2.8" fill="#C5A8D0" opacity="0.55"/>
-      <!-- small leaves along branch -->
-      <ellipse cx="60" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-15,60,14)"/>
-      <ellipse cx="97" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(10,97,13)"/>
-      <ellipse cx="138" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-8,138,13)"/>
-      <ellipse cx="180" cy="14" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(12,180,14)"/>
-      <ellipse cx="218" cy="13" rx="5" ry="3" fill="#4a7a30" opacity="0.5" transform="rotate(-10,218,13)"/>
-      <ellipse cx="255" cy="12" rx="5" ry="3" fill="#4a7a30" opacity="0.45" transform="rotate(8,255,12)"/>
-    </svg>
-  </div>
   <p class="section-lead" data-i18n="rsvp_lead">Please respond by the date on your invitation.</p>  <div class="rsvp-wrap content-card rsvp-fallback">
     <p data-i18n-html="rsvp_inst">To collect RSVPs online, create a form in Google Forms (or Typeform, etc.), then use <strong>Send → &lt;&gt; Embed HTML</strong> and add an iframe here, for example:</p>
     <pre style="margin:1rem 0;font-size:0.85rem;overflow:auto;background:rgba(75,0,31,0.08);padding:1rem;border-radius:8px;">&lt;iframe title=&quot;RSVP&quot; src=&quot;YOUR_EMBED_URL&quot;
