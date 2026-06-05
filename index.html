@@ -597,7 +597,7 @@ nav {
 <!-- Photos -->
 <section id="photos" hidden aria-labelledby="photos-heading">
   <h2 id="photos-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_photos">Photos</span></h2>
-  <p class="section-lead" data-i18n="photos_lead">A few favourites — click to enlarge.</p>  <div class="grid" id="photo-grid" data-i18n-aria="photos_grid_aria" aria-label="Photo gallery"></div>
+  <p class="section-lead" data-i18n="photos_lead">A few favorites — click to enlarge.</p>  <div class="grid" id="photo-grid" data-i18n-aria="photos_grid_aria" aria-label="Photo gallery"></div>
   <div class="photo-pagination" id="photo-pagination">
     <button class="page-btn active" data-page="1">Page 1</button>
     <button class="page-btn" data-page="2">Page 2</button>
@@ -678,9 +678,8 @@ nav {
 <!-- Travel -->
 <section id="travel" hidden aria-labelledby="travel-heading">
   <h2 id="travel-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="travel_h2">Travel &amp; Lodging</span></h2>
-  <p class="section-lead" data-i18n="travel_lead">Bucharest Henri Coandă (OTP) is the main international airport, about 30–45 minutes from the city centre by car or taxi.</p>  <div class="content-card">
-    <p data-i18n-html="travel_stay"><strong>Where to stay</strong> — Add 2–3 hotel suggestions near your venue or Old Town, with booking links if you have group rates.</p>
-    <p data-i18n-html="travel_get"><strong>Getting around</strong> — Taxis and ride-hailing (e.g. Bolt) are widely used; the metro is useful for central sights.</p>
+  <p class="section-lead" data-i18n="travel_lead">Bucharest Henri Coandă (OTP) is the main international airport, about 30–45 minutes from the city center by car or taxi.</p>  <div class="content-card">
+    <p style="margin:0;"><strong>Room blocks coming soon.</strong> We will have a room block at the hotel where the reception will be, InterContinental AthéNéE Palace Bucharest, which will be made available sometime in September. We will also have one other room block at an additional hotel in the city center nearby.</p>
   </div>
 </section>
 
@@ -767,9 +766,8 @@ nav {
   <details class="faq-item">
     <summary class="faq-question" data-i18n="faq_q5">What is the best way to get around Bucharest?</summary>
     <div class="faq-answer">
-      <p data-i18n="faq_a5a">We will provide a shuttle for transportation between the religious ceremony and reception.</p>
 
-      <div style="margin-top:1rem; border: 1px solid rgba(75,0,31,0.15); border-radius: 10px; overflow:hidden;">
+      <div style="margin-top:0; border: 1px solid rgba(75,0,31,0.15); border-radius: 10px; overflow:hidden;">
 
         <details style="border-bottom: 1px solid rgba(75,0,31,0.12);">
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
@@ -852,19 +850,20 @@ nav {
 <!-- Registry -->
 <section id="registry" hidden aria-labelledby="registry-heading">
   <h2 id="registry-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_registry">Registry</span></h2>
-  <p class="section-lead" data-i18n="reg_lead">Your presence is the best gift. If you would like to give something, we have registered at:</p>  <div class="content-card">
-    <p style="margin:0;" data-i18n-html="reg_placeholder">Replace this block with links to your registry (e.g. John Lewis, Zola, honeymoon fund). Example: <a href="#">Registry link</a></p>
+  <div style="max-width:36rem; margin:2rem auto; text-align:center;">
+    <div style="font-size:3.5rem; margin-bottom:1rem; opacity:0.7;">🔒</div>
+    <p style="font-size:1.3rem; font-weight:600; margin:0 0 0.5rem; color:var(--cream);">Coming Soon</p>
+    <p style="opacity:0.75; margin:0; font-size:1rem;">Our registry details will be available here soon. Check back later!</p>
   </div>
 </section>
 
 <!-- RSVP -->
 <section id="rsvp" hidden aria-labelledby="rsvp-heading">
   <h2 id="rsvp-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_rsvp">RSVP</span></h2>
-  <p class="section-lead" data-i18n="rsvp_lead">Please respond by the date on your invitation.</p>  <div class="rsvp-wrap content-card rsvp-fallback">
-    <p data-i18n-html="rsvp_inst">To collect RSVPs online, create a form in Google Forms (or Typeform, etc.), then use <strong>Send → &lt;&gt; Embed HTML</strong> and add an iframe here, for example:</p>
-    <pre style="margin:1rem 0;font-size:0.85rem;overflow:auto;background:rgba(75,0,31,0.08);padding:1rem;border-radius:8px;">&lt;iframe title=&quot;RSVP&quot; src=&quot;YOUR_EMBED_URL&quot;
-  style=&quot;width:100%;min-height:720px;border:0;border-radius:12px;&quot;&gt;&lt;/iframe&gt;</pre>
-    <p style="margin-bottom:0;" data-i18n-html="rsvp_email">Until then, guests can reach you at <!-- TODO: your email --><a href="mailto:hello@example.com">hello@example.com</a> (replace with your address).</p>
+  <div style="max-width:36rem; margin:2rem auto; text-align:center;">
+    <div style="font-size:3.5rem; margin-bottom:1rem; opacity:0.7;">🔒</div>
+    <p style="font-size:1.3rem; font-weight:600; margin:0 0 0.5rem; color:var(--cream);">Coming Soon</p>
+    <p style="opacity:0.75; margin:0; font-size:1rem;">RSVP will open here once invitations are sent. Please check back then!</p>
   </div>
 </section>
 
@@ -888,7 +887,7 @@ nav {
       story_p3: "After a year of long distance, Lucy moved to Bucharest when she graduated from her master's program.",
       story_p4: "They spent the next two years living in Bucharest, discovering new favorite restaurants, going to the movies, taking weekend excursions, and visiting family in Eforie Sud and in the United States.",
       story_p5: "When Lucy's job brought her back to the United States, they planned a post-holiday trip to Paris — and in the gardens at Versailles, Cosmin asked Lucy to marry him.",
-      photos_lead: "A few favourites — click to enlarge.",
+      photos_lead: "A few favorites — click to enlarge.",
       photos_grid_aria: "Photo gallery",
       photos_credit: "Our engagement photos were done by the amazing Andreea Sali from Eforie Sud<br>\n    Instagram business account: <strong>as.momentcolor</strong><br>\n    <a href=\"https://www.fotografi-cameramani.ro/andreea-sali_6974\" target=\"_blank\" rel=\"noopener noreferrer\">fotografi-cameramani.ro/andreea-sali_6974</a>",
       lightbox_label: "Enlarged photo", lightbox_prev: "Previous photo", lightbox_next: "Next photo",
@@ -900,7 +899,7 @@ nav {
       sch_sat_shuttle: "St. Joseph's Cathedral is located at Strada General Berthelot 19 — approximately a 10-minute walk from the InterContinental AthéNéE Palace. Please plan to arrive by 2:30 pm, about 30 minutes before the ceremony begins.",
       sch_sat_cock: "Cocktail Hour", sch_sat_cock_loc: "6:00 pm @ InterContinental AthéNéE Palace Bucharest — 1st floor Terrace", sch_sat_cock_p: "Canapés and refreshments will be served.",
       sch_sat_rec: "Reception", sch_sat_rec_loc: "7:00 pm @ InterContinental AthéNéE Palace Bucharest — Diplomat Ballroom", sch_sat_rec_p: "Enjoy a three course meal, cake cutting, and dancing the night away with us!",
-      travel_lead: "Bucharest Henri Coandă (OTP) is the main international airport, about 30–45 minutes from the city centre by car or taxi.",
+      travel_lead: "Bucharest Henri Coandă (OTP) is the main international airport, about 30–45 minutes from the city center by car or taxi.",
       travel_h2: "Travel & Lodging",
       travel_stay: "<strong>Where to stay</strong> — Add 2–3 hotel suggestions near your venue or Old Town, with booking links if you have group rates.",
       travel_get: "<strong>Getting around</strong> — Taxis and ride-hailing (e.g. Bolt) are widely used; the metro is useful for central sights.",
