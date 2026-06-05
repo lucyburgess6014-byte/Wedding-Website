@@ -102,7 +102,10 @@ section.is-visible { display: block; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,0.8);
+  text-shadow:
+    0 0 20px rgba(0,0,0,0.9),
+    0 0 40px rgba(0,0,0,0.7),
+    0 2px 8px rgba(0,0,0,0.8);
 }
 
 /* ── TYPOGRAPHY ── */
@@ -110,7 +113,10 @@ h1, h2 { font-family: "Great Vibes", cursive; font-weight: 400; margin: 0 0 0.5r
 h1 {
   font-size: clamp(2.8rem, 12vw, 4.5rem);
   line-height: 1.1;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.6);
+  text-shadow:
+    0 0 30px rgba(0,0,0,0.95),
+    0 0 60px rgba(0,0,0,0.75),
+    0 2px 12px rgba(0,0,0,0.9);
 }
 h2 {
   font-size: clamp(2rem, 7vw, 3rem);
@@ -553,8 +559,8 @@ nav {
     <div class="hero-details">
       <p data-i18n="hero_date" style="font-size:clamp(1.4rem, 4.5vw, 2.1rem);">July 17, 2027</p>
       <p data-i18n="hero_place" style="font-size:clamp(1.4rem, 4.5vw, 2.1rem);">Bucharest, Romania</p>
-      <p style="margin-top:1.25rem; font-size:clamp(0.85rem, 2.2vw, 1.1rem); font-weight:400; letter-spacing:0.04em; text-transform:none; opacity:0.88;" data-i18n="hero_venue1">Catholic Ceremony: St. Joseph's Cathedral</p>
-      <p style="margin-top:0.3rem; font-size:clamp(0.85rem, 2.2vw, 1.1rem); font-weight:400; letter-spacing:0.04em; text-transform:none; opacity:0.88;" data-i18n="hero_venue2">Cocktail Hour &amp; Reception: InterContinental AthéNéE Palace Bucharest</p>
+      <p style="margin-top:1.25rem; font-size:clamp(0.85rem, 2.2vw, 1.1rem); font-weight:400; letter-spacing:0.04em; text-transform:none; opacity:0.88; text-shadow: 0 0 16px rgba(0,0,0,0.9), 0 0 32px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.8);" data-i18n="hero_venue1">Catholic Ceremony: St. Joseph's Cathedral</p>
+      <p style="margin-top:0.3rem; font-size:clamp(0.85rem, 2.2vw, 1.1rem); font-weight:400; letter-spacing:0.04em; text-transform:none; opacity:0.88; text-shadow: 0 0 16px rgba(0,0,0,0.9), 0 0 32px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.8);" data-i18n="hero_venue2">Cocktail Hour &amp; Reception: InterContinental AthéNéE Palace Bucharest</p>
     </div>
   </div>
 </section>
