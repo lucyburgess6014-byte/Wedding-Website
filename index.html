@@ -679,7 +679,7 @@ nav {
 <section id="travel" hidden aria-labelledby="travel-heading">
   <h2 id="travel-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="travel_h2">Travel &amp; Lodging</span></h2>
   <p class="section-lead" data-i18n="travel_lead">Bucharest Henri Coandă (OTP) is the main international airport, about 30–45 minutes from the city center by car or taxi.</p>  <div class="content-card">
-    <p style="margin:0;"><strong>Room blocks coming soon.</strong> We will have a room block at the hotel where the reception will be, InterContinental AthéNéE Palace Bucharest, which will be made available sometime in September. We will also have one other room block at an additional hotel in the city center nearby.</p>
+    <p style="margin:0;" data-i18n-html="travel_roomblock"><strong>Room blocks coming soon.</strong> We will have a room block at the hotel where the reception will be, InterContinental AthéNéE Palace Bucharest, which will be made available sometime in September. We will also have one other room block at an additional hotel in the city center nearby.</p>
   </div>
 </section>
 
@@ -852,8 +852,8 @@ nav {
   <h2 id="registry-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_registry">Registry</span></h2>
   <div style="max-width:36rem; margin:2rem auto; text-align:center;">
     <div style="font-size:3.5rem; margin-bottom:1rem; opacity:0.7;">🔒</div>
-    <p style="font-size:1.3rem; font-weight:600; margin:0 0 0.5rem; color:var(--cream);">Coming Soon</p>
-    <p style="opacity:0.75; margin:0; font-size:1rem;">Our registry details will be available here soon. Check back later!</p>
+    <p style="font-size:1.3rem; font-weight:600; margin:0 0 0.5rem; color:var(--cream);" data-i18n="reg_soon">Coming Soon</p>
+    <p style="opacity:0.75; margin:0; font-size:1rem;" data-i18n="reg_soon_sub">Our registry details will be available here soon. Check back later!</p>
   </div>
 </section>
 
@@ -862,8 +862,8 @@ nav {
   <h2 id="rsvp-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_rsvp">RSVP</span></h2>
   <div style="max-width:36rem; margin:2rem auto; text-align:center;">
     <div style="font-size:3.5rem; margin-bottom:1rem; opacity:0.7;">🔒</div>
-    <p style="font-size:1.3rem; font-weight:600; margin:0 0 0.5rem; color:var(--cream);">Coming Soon</p>
-    <p style="opacity:0.75; margin:0; font-size:1rem;">RSVP will open here once invitations are sent. Please check back then!</p>
+    <p style="font-size:1.3rem; font-weight:600; margin:0 0 0.5rem; color:var(--cream);" data-i18n="rsvp_soon">Coming Soon</p>
+    <p style="opacity:0.75; margin:0; font-size:1rem;" data-i18n="rsvp_soon_sub">RSVP will open here once invitations are sent. Please check back then!</p>
   </div>
 </section>
 
@@ -941,9 +941,14 @@ nav {
       faq_a8d: "Please reach out to us if you do have any specific questions or concerns!! We are happy to help you prepare for such a big international journey.",
       reg_lead: "Your presence is the best gift. If you would like to give something, we have registered at:",
       reg_placeholder: "Replace this block with links to your registry (e.g. John Lewis, Zola, honeymoon fund). Example: <a href=\"#\">Registry link</a>",
+      reg_soon: "Coming Soon",
+      reg_soon_sub: "Our registry details will be available here soon. Check back later!",
       rsvp_lead: "Please respond by the date on your invitation.",
       rsvp_inst: "To collect RSVPs online, create a form in Google Forms (or Typeform, etc.), then use <strong>Send → &lt;&gt; Embed HTML</strong> and add an iframe here, for example:",
       rsvp_email: "Until then, guests can reach you at <!-- TODO: your email --><a href=\"mailto:hello@example.com\">hello@example.com</a> (replace with your address).",
+      rsvp_soon: "Coming Soon",
+      rsvp_soon_sub: "RSVP will open here once invitations are sent. Please check back then!",
+      travel_roomblock: "<strong>Room blocks coming soon.</strong> We will have a room block at the hotel where the reception will be, InterContinental AthéNéE Palace Bucharest, which will be made available sometime in September. We will also have one other room block at an additional hotel in the city center nearby.",
       photo_alt_prefix: "Lucy and Cosmin — photo "
     },
     ro: {
@@ -951,7 +956,7 @@ nav {
       nav_home: "Acasă", nav_story: "Povestea noastră", nav_photos: "Fotografii", nav_schedule: "Program", nav_travel: "Călătorie", nav_things: "Activități", nav_faq: "Întrebări", nav_registry: "Cadouri", nav_rsvp: "RSVP",
       hero_date: "17 iulie 2027", hero_place: "București, România",
       hero_venue1: "Ceremonie catolică: Catedrala Sfântul Iosif",
-      hero_venue2: "Cocktail & Recepție: InterContinental AthéNéE Palace București",
+      hero_venue2: "Cocktail Hour & Recepție: InterContinental AthéNéE Palace București",
       story_lead: "Suntem atât de bucuroși că faceți parte din acest capitol.",
       story_img_alt: "Lucy și Cosmin",
       story_p1: "Lucy și Cosmin s-au cunoscut vara anului 2022, când Lucy își finaliza un proiect pentru masterat la București. Lucy se întorcea cu trenul dintr-un weekend în Bulgaria, iar Cosmin se afla întâmplător în locul ei. După drumul înapoi acasă împreună, și-au dat datele de contact, iar ce a început ca întâlniri în grupul de prieteni a devenit repede întâlniri doar ei doi. Au petrecut restul verii nedespărțiți, iar când Lucy s-a întors acasă la sfârșitul verii, Cosmin i-a promis că o va vizita în Statele Unite.",
@@ -1015,9 +1020,14 @@ nav {
       faq_a8d: "Scrieți-ne dacă aveți întrebări — vă ajutăm cu plăcere să vă pregătiți pentru această călătorie!",
       reg_lead: "În curând disponibil.",
       reg_placeholder: "Detaliile listei de cadouri vor fi disponibile aici în curând. Reveniți mai târziu!",
+      reg_soon: "În curând",
+      reg_soon_sub: "Detaliile listei de cadouri vor fi disponibile aici în curând. Reveniți mai târziu!",
       rsvp_lead: "În curând disponibil.",
       rsvp_inst: "RSVP-ul va fi deschis odată ce invitațiile sunt trimise. Vă rugăm să reveniți atunci!",
       rsvp_email: "",
+      rsvp_soon: "În curând",
+      rsvp_soon_sub: "RSVP-ul va fi deschis odată ce invitațiile sunt trimise. Vă rugăm să reveniți atunci!",
+      travel_roomblock: "<strong>Blocuri de camere în curând.</strong> Vom rezerva un bloc de camere la hotelul unde va avea loc recepția, InterContinental AthéNéE Palace București, disponibil din septembrie. Vom avea de asemenea un al doilea bloc de camere la un hotel din apropierea centrului orașului.",
       photo_alt_prefix: "Lucy și Cosmin — fotografia "
     }
   };
