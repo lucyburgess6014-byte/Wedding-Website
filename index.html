@@ -686,54 +686,191 @@ nav {
 <!-- Things -->
 <section id="things" hidden aria-labelledby="things-heading">
   <h2 id="things-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_things">Things To Do</span></h2>
-  <p class="things-subhead" data-i18n="things_sub">We have an exciting week of activities leading up to the wedding!</p>
+  <p class="things-subhead" data-i18n="things_sub">We know many of you are traveling a great distance to be at our wedding and we could not be more thankful!</p>
+  <p style="max-width:40rem; margin:0 auto 1.5rem; line-height:1.7; font-size:clamp(0.95rem, 2.2vw, 1.08rem); opacity:0.88; text-align:center;" data-i18n="things_sub2">To help make your stay as easy and enjoyable as possible, below is a list of some of our top recommendations of things to experience while you are here. Please make sure to come back to this page in the future as well, as we have plans to put together some group activities the days leading up to the wedding!</p>
 
-  <div class="content-card">
-    <p data-i18n="things_i1">Below is a list of group activities available the week before the wedding, plus instructions on how to join each one. You're welcome to join any number of activities — or visit these places on your own time while in Bucharest! These are our top recommendations and we hope you enjoy them!</p>
-    <p data-i18n="things_i2">Please note: These are informal group outings rather than guided tours. The specified activity will provide an opportunity to have everyone at the same outing, but there will not be a formal tour leader; once we arrive you're free to explore independently or stick with the group.</p>
-    <p data-i18n="things_i3">The purpose of these activities is more for people to have a reason to travel with a larger group, and get the chance to mix and mingle leading up to the wedding.</p>
-    <p data-i18n="things_i4">You will be in charge of purchasing your own tickets specified, and managing your time at each place.</p>
-  </div>
+  <!-- ============================================================
+       ACTIVITIES VISIBILITY FLAG
+       Change SHOW_ACTIVITIES to true when ready to make this public
+       ============================================================ -->
+  <script>var SHOW_ACTIVITIES = false;</script>
+  <div id="activities-block" style="display:none;">
 
-  <div class="content-card things-activity-card">
-    <img class="things-activity-img" src="things-peoples-palace.jpg" alt="Palace of the Parliament, Bucharest" width="800" height="450" loading="eager" decoding="async" data-i18n-alt="things_alt_parliament">
-    <div class="things-activity-body">
-      <strong data-i18n="things_m12">Monday, July 12</strong>
-      <p data-i18n="things_m12_p">To kick off the week, we will meet for a free walking tour of Bucharest at 3pm, meeting at Strada Lipscani 77, 030167. This tour will focus on the history of Bucharest, to allow people to gain more insight on important historical events/sites around the city!</p>
+    <div class="content-card">
+      <p data-i18n="things_i1">Below is a list of group activities available the week before the wedding, plus instructions on how to join each one. You're welcome to join any number of activities — or visit these places on your own time while in Bucharest! These are our top recommendations and we hope you enjoy them!</p>
+      <p data-i18n="things_i2">Please note: These are informal group outings rather than guided tours. The specified activity will provide an opportunity to have everyone at the same outing, but there will not be a formal tour leader; once we arrive you're free to explore independently or stick with the group.</p>
+      <p data-i18n="things_i3">The purpose of these activities is more for people to have a reason to travel with a larger group, and get the chance to mix and mingle leading up to the wedding.</p>
+      <p data-i18n="things_i4">You will be in charge of purchasing your own tickets specified, and managing your time at each place.</p>
     </div>
+
+    <div class="content-card things-activity-card">
+      <img class="things-activity-img" src="things-peoples-palace.jpg" alt="Palace of the Parliament, Bucharest" width="800" height="450" loading="eager" decoding="async" data-i18n-alt="things_alt_parliament">
+      <div class="things-activity-body">
+        <strong data-i18n="things_m12">Monday, July 12</strong>
+        <p data-i18n="things_m12_p">To kick off the week, we will meet for a free walking tour of Bucharest at 3pm, meeting at Strada Lipscani 77, 030167. This tour will focus on the history of Bucharest, to allow people to gain more insight on important historical events/sites around the city!</p>
+      </div>
+    </div>
+
+    <div class="content-card things-activity-card">
+      <img class="things-activity-img" src="things-bran-castle.jpg" alt="Bran Castle" width="800" height="450" loading="eager" decoding="async" data-i18n-alt="things_alt_bran">
+      <div class="things-activity-body">
+        <strong data-i18n="things_m13">Tuesday, July 13</strong>
+        <p data-i18n="things_m13_p1">Private shuttle for a half-day exploring the Saxon/Transylvanian town of Brașov, and a half-day exploring Bran Castle (the "Dracula" castle).</p>
+        <p data-i18n="things_m13_p2">Shuttle departs from Bucharest and returns same day.</p>
+        <p style="margin-top:0.75rem;" data-i18n="things_rsvp_line">To join, please RSVP by clicking here:</p>
+        <p><a class="website-btn" href="https://forms.gle/kit6CGPwQR2vGr3e6" target="_blank" rel="noopener noreferrer" data-i18n="things_btn">Website</a></p>
+      </div>
+    </div>
+
+    <div class="content-card things-activity-card">
+      <img class="things-activity-img" src="things-peles-castle.jpg" alt="Peleș Castle, Sinaia" width="800" height="450" loading="eager" decoding="async" data-i18n-alt="things_alt_peles">
+      <div class="things-activity-body">
+        <strong data-i18n="things_m14">Wednesday, July 14</strong>
+        <p data-i18n="things_m14_p1">We will be doing a shorter day trip to the mountain town of Sinaia, to see Peleș Castle. Because this trip is shorter, and involves less transfers, we will be taking the train.</p>
+        <p style="margin-top:0.75rem;" data-i18n="things_rsvp_line">To join, please RSVP by clicking here:</p>
+        <p><a class="website-btn" href="https://forms.gle/vUeCwMeg4kGSDqpn9" target="_blank" rel="noopener noreferrer" data-i18n="things_btn">Website</a></p>
+      </div>
+    </div>
+
+    <div class="content-card things-activity-card">
+      <img class="things-activity-img" src="things-therme.jpg" alt="Therme Bucharest" width="800" height="450" loading="eager" decoding="async" data-i18n-alt="things_alt_therme">
+      <div class="things-activity-body">
+        <strong data-i18n="things_m15">Thursday, July 15</strong>
+        <p data-i18n="things_m15_p1">We'll spend a relaxing afternoon and evening at Therme Bucharest. We'll depart after lunch at 1:00 PM.</p>
+        <p data-i18n="things_m15_p2">There's a local bus that goes to Therme—ask your hotel concierge if you'd like help with routes—but the fastest and most direct way is to use Uber, which is what we usually do.</p>
+        <p data-i18n-html="things_m15_p3">Buy tickets at the entrance or in advance on their website: <a href="https://www.therme.ro/" target="_blank" rel="noopener noreferrer">therme.ro</a>.</p>
+        <p data-i18n="things_m15_p4">Choose any package and duration you prefer. Please bring flip-flops to wear between pool areas; if you don't have a pair you can buy them on site.</p>
+      </div>
+    </div>
+
+  </div><!-- end activities-block -->
+  <script>if (SHOW_ACTIVITIES) document.getElementById('activities-block').style.display = '';</script>
+
+  <!-- Recommendations -->
+  <div style="max-width:42rem; margin:1.5rem auto 0; text-align:left;">
+    <p style="font-size:0.85rem; opacity:0.7; margin:0 0 0.75rem; letter-spacing:0.06em; text-transform:uppercase; text-align:center;">Lucy &amp; Cosmin's Recommendations</p>
+    <p style="font-size:0.82rem; opacity:0.55; margin:0 0 1rem; text-align:center;">Tap any place to open in Google Maps</p>
+
+    <details style="margin-bottom:0.6rem;">
+      <summary style="list-style:none;cursor:pointer;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:#fff;">
+        <span style="font-size:1.2rem;">🍽️</span> Places to eat
+      </summary>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-top:none;border-radius:0 0 12px 12px;padding:12px 18px 16px;">
+        <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.55;margin:10px 0 8px;">Dinner</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+          <a href="https://hanumanucrestaurant.ro/en/" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Hanu lui Manuc <span style="opacity:0.6;font-size:0.8rem;">· traditional Romanian</span></a>
+          <a href="https://www.carucubere.ro/en/" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Caru cu Bere <span style="opacity:0.6;font-size:0.8rem;">· traditional Romanian</span></a>
+          <a href="https://maps.google.com/?q=Edo%20Sushi%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Edo Sushi</a>
+          <a href="https://maps.google.com/?q=Tankeria%20Ursu%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Tankeria Ursu <span style="opacity:0.6;font-size:0.8rem;">· bar food</span></a>
+          <a href="https://maps.google.com/?q=Sera%20Eden%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Sera Eden <span style="opacity:0.6;font-size:0.8rem;">· trendy urban</span></a>
+          <a href="https://maps.google.com/?q=Hushimo%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Hushimo</a>
+          <a href="https://maps.google.com/?q=Balls%20restaurant%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Balls</a>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,0.1);margin:0 0 12px;"></div>
+        <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.55;margin:0 0 8px;">Breakfast</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+          <a href="https://maps.google.com/?q=La%20Mita%20Biciclista%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Mita Biciclista</a>
+          <a href="https://maps.google.com/?q=Ever%20After%20restaurant%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Ever After</a>
+          <a href="https://maps.google.com/?q=Ou%20restaurant%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Ou</a>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,0.1);margin:0 0 12px;"></div>
+        <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.55;margin:0 0 8px;">Dessert</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+          <a href="https://maps.google.com/?q=Velocita%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Velocita</a>
+          <a href="https://maps.google.com/?q=Love%20you%20Choux%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Love you Choux</a>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,0.1);margin:0 0 12px;"></div>
+        <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.55;margin:0 0 8px;">Coffee</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <a href="https://maps.google.com/?q=Ototo%20Coffee%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Ototo <span style="opacity:0.6;font-size:0.8rem;">· Victoriei or Amzei location</span></a>
+          <a href="https://maps.google.com/?q=Uzina%20cafe%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Uzina</a>
+          <a href="https://maps.google.com/?q=M60%20cafe%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">M60</a>
+          <a href="https://maps.google.com/?q=Black%20Habit%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Black Habit</a>
+        </div>
+      </div>
+    </details>
+
+    <details style="margin-bottom:0.6rem;">
+      <summary style="list-style:none;cursor:pointer;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:#fff;">
+        <span style="font-size:1.2rem;">🍸</span> Bars and cocktail bars
+      </summary>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-top:none;border-radius:0 0 12px 12px;padding:16px 18px;">
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <a href="https://maps.google.com/?q=Uzina%20bar%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Uzina</a>
+          <a href="https://maps.google.com/?q=La%20Mita%20Biciclista%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Mita Biciclista <span style="opacity:0.6;font-size:0.8rem;">· upscale</span></a>
+          <a href="https://maps.google.com/?q=The%20Owl%20bar%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">The Owl</a>
+          <a href="https://maps.google.com/?q=Bar%20Ton%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Bar Ton</a>
+          <a href="https://maps.google.com/?q=Artichoke%20bar%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Artichoke</a>
+          <a href="https://maps.google.com/?q=Linea%20Closer%20to%20the%20Moon%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Linear on the Moon</a>
+          <a href="https://maps.google.com/?q=Hop%20Hooligans%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Hop Hooligans <span style="opacity:0.6;font-size:0.8rem;">· beer hall</span></a>
+          <a href="https://maps.google.com/?q=The%20Vault%20bar%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">The Vault <span style="opacity:0.6;font-size:0.8rem;">· upscale</span></a>
+          <a href="https://maps.google.com/?q=Primus%20bar%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Primus <span style="opacity:0.6;font-size:0.8rem;">· pub</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details style="margin-bottom:0.6rem;">
+      <summary style="list-style:none;cursor:pointer;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:#fff;">
+        <span style="font-size:1.2rem;">🎶</span> Nightlife
+      </summary>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-top:none;border-radius:0 0 12px 12px;padding:16px 18px;">
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+          <a href="https://maps.google.com/?q=Control%20Club%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Control Club</a>
+          <a href="https://maps.google.com/?q=Beluga%20club%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Beluga</a>
+          <a href="https://maps.google.com/?q=Nomad%20Skybar%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Nomad Skybar</a>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,0.1);margin:0 0 12px;"></div>
+        <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.55;margin:0 0 8px;">Beer Alley</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <a href="https://maps.google.com/?q=The%20Drunken%20Lords%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">The Drunken Lords</a>
+          <a href="https://maps.google.com/?q=El%20Comandante%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">El Comandante</a>
+          <a href="https://maps.google.com/?q=El%20Dictador%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">El Dictador</a>
+        </div>
+      </div>
+    </details>
+
+    <details style="margin-bottom:0.6rem;">
+      <summary style="list-style:none;cursor:pointer;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:#fff;">
+        <span style="font-size:1.2rem;">🏛️</span> Things to see and do
+      </summary>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-top:none;border-radius:0 0 12px 12px;padding:16px 18px;">
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <a href="https://maps.google.com/?q=National%20Museum%20of%20Art%20Romania%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Royal Palace / National Museum of Art</a>
+          <a href="https://maps.google.com/?q=Cismigiu%20Park%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Cișmigiu Park <span style="opacity:0.6;font-size:0.8rem;">· rent row boats!</span></a>
+          <a href="https://maps.google.com/?q=Palace%20of%20Parliament%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Palace of Parliament</a>
+          <a href="https://maps.google.com/?q=Palatul%20Primaverii%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">"Spring Palace" <span style="opacity:0.6;font-size:0.8rem;">· Ceaușescu's house</span></a>
+          <a href="https://maps.google.com/?q=Herastrau%20Park%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Herăstrău Park</a>
+          <a href="https://maps.google.com/?q=Old%20Town%20Lipscani%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Old Town</a>
+          <a href="https://maps.google.com/?q=Therme%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Therme <span style="opacity:0.6;font-size:0.8rem;">· spa / water park</span></a>
+          <a href="https://maps.google.com/?q=Wiggle+Room+Bucharest+Str+C+A+Rosetti" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Wiggle Room <span style="opacity:0.6;font-size:0.8rem;">· for little ones</span></a>
+        </div>
+      </div>
+    </details>
+
+    <details style="margin-bottom:0.6rem;">
+      <summary style="list-style:none;cursor:pointer;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:#fff;">
+        <span style="font-size:1.2rem;">🗺️</span> Excursions outside of Bucharest
+      </summary>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-top:none;border-radius:0 0 12px 12px;padding:16px 18px;">
+        <p style="font-size:0.88rem;opacity:0.75;margin:0 0 14px;line-height:1.6;">Some of these are easy day trips from the city, while others are more of an adventure that are worth renting a car or turning into an overnight journey. Some are specific sites, whereas others are general locations.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <a href="https://maps.google.com/?q=Bran+Castle+Romania" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Bran Castle <span style="opacity:0.6;font-size:0.8rem;">· Dracula's Castle</span></a>
+        <a href="https://maps.google.com/?q=Peles+Castle+Sinaia+Romania" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Pelеș Castle <span style="opacity:0.6;font-size:0.8rem;">· in the gorgeous town of Sinaia</span></a>
+        <a href="https://maps.google.com/?q=Cantacuzino+Castle+Busteni+Romania" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Cantacuzino Castle <span style="opacity:0.6;font-size:0.8rem;">· filmed the Netflix show Wednesday</span></a>
+        <a href="https://maps.google.com/?q=Busteni+Cable+Car+Romania" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Bușteni Cable Car <span style="opacity:0.6;font-size:0.8rem;">· takes you to the top of the Bucegi Mountains</span></a>
+        <a href="https://maps.google.com/?q=Transfagarasan+Road+Romania" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Transfăgărășan Road <span style="opacity:0.6;font-size:0.8rem;">· Romania's iconic mountain pass over the Făgăraș Mountains, home to a large population of Romania's famous bears</span></a>
+        <a href="https://maps.google.com/?q=Brasov+Romania" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Brașov <span style="opacity:0.6;font-size:0.8rem;">· historic Saxon town</span></a>
+        <a href="https://maps.google.com/?q=Sighisoara+Romania" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Sighișoara <span style="opacity:0.6;font-size:0.8rem;">· UNESCO World Heritage Site</span></a>
+        <a href="https://maps.google.com/?q=Constanta+Romania" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:rgba(255,255,255,0.88);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Constanța <span style="opacity:0.6;font-size:0.8rem;">· Romania's coastal port city, perfect for a beach day on the Black Sea</span></a>
+      </div>
+    </div>
+
+  </div>
+      </div>
+    </details>
+
   </div>
 
-  <div class="content-card things-activity-card">
-    <img class="things-activity-img" src="things-bran-castle.jpg" alt="Bran Castle" width="800" height="450" loading="eager" decoding="async" data-i18n-alt="things_alt_bran">
-    <div class="things-activity-body">
-      <strong data-i18n="things_m13">Tuesday, July 13</strong>
-      <p data-i18n="things_m13_p1">Private shuttle for a half-day exploring the Saxon/Transylvanian town of Brașov, and a half-day exploring Bran Castle (the "Dracula" castle).</p>
-      <p data-i18n="things_m13_p2">Shuttle departs from Bucharest and returns same day.</p>
-      <p style="margin-top:0.75rem;" data-i18n="things_rsvp_line">To join, please RSVP by clicking here:</p>
-      <p><a class="website-btn" href="https://forms.gle/kit6CGPwQR2vGr3e6" target="_blank" rel="noopener noreferrer" data-i18n="things_btn">Website</a></p>
-    </div>
-  </div>
-
-  <div class="content-card things-activity-card">
-    <img class="things-activity-img" src="things-peles-castle.jpg" alt="Peleș Castle, Sinaia" width="800" height="450" loading="eager" decoding="async" data-i18n-alt="things_alt_peles">
-    <div class="things-activity-body">
-      <strong data-i18n="things_m14">Wednesday, July 14</strong>
-      <p data-i18n="things_m14_p1">We will be doing a shorter day trip to the mountain town of Sinaia, to see Peleș Castle. Because this trip is shorter, and involves less transfers, we will be taking the train.</p>
-      <p style="margin-top:0.75rem;" data-i18n="things_rsvp_line">To join, please RSVP by clicking here:</p>
-      <p><a class="website-btn" href="https://forms.gle/vUeCwMeg4kGSDqpn9" target="_blank" rel="noopener noreferrer" data-i18n="things_btn">Website</a></p>
-    </div>
-  </div>
-
-  <div class="content-card things-activity-card">
-    <img class="things-activity-img" src="things-therme.jpg" alt="Therme Bucharest" width="800" height="450" loading="eager" decoding="async" data-i18n-alt="things_alt_therme">
-    <div class="things-activity-body">
-      <strong data-i18n="things_m15">Thursday, July 15</strong>
-      <p data-i18n="things_m15_p1">We'll spend a relaxing afternoon and evening at Therme Bucharest. We'll depart after lunch at 1:00 PM.</p>
-      <p data-i18n="things_m15_p2">There's a local bus that goes to Therme—ask your hotel concierge if you'd like help with routes—but the fastest and most direct way is to use Uber, which is what we usually do.</p>
-      <p data-i18n-html="things_m15_p3">Buy tickets at the entrance or in advance on their website: <a href="https://www.therme.ro/" target="_blank" rel="noopener noreferrer">therme.ro</a>.</p>
-      <p data-i18n="things_m15_p4">Choose any package and duration you prefer. Please bring flip-flops to wear between pool areas; if you don't have a pair you can buy them on site.</p>
-    </div>
-  </div>
 </section>
 
 <!-- FAQs -->
@@ -773,10 +910,8 @@ nav {
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
             <span style="font-size:1.1rem;">🚗</span> Airport pick-up &amp; drop-off
           </summary>
-          <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);">
-            <p style="margin:0 0 0.5rem;" data-i18n="faq_a5b">Your hotel can arrange a shuttle or private transfer — the hotel where we reserved a room block can help coordinate this.</p>
-            <p style="margin:0 0 0.5rem;" data-i18n="faq_a5c">Uber is also an easy option and what we usually use to get to and from the airport.</p>
-            <p style="margin:0;" data-i18n="faq_a5d">There is a train that connects the airport to Bucharest's main station, Gara de Nord, but it's reportedly slow and I haven't tried it myself.</p>
+          <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);" data-i18n="faq_a5b">
+            Your hotel can arrange a shuttle or private transfer — the hotel where we reserved a room block can help coordinate this.
           </div>
         </details>
 
@@ -785,6 +920,7 @@ nav {
             <span style="font-size:1.1rem;">🚕</span> Uber
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);">
+            <p style="margin:0 0 0.5rem;" data-i18n="faq_a5c">Uber is also an easy option and what we usually use to and from the airport.</p>
             <p style="margin:0;" data-i18n="faq_a5e">Uber is easy, reliable, and inexpensive for short trips around the city. It is best to have the app already downloaded and your payment already set up before you arrive in Bucharest.</p>
           </div>
         </details>
@@ -794,6 +930,7 @@ nav {
             <span style="font-size:1.1rem;">🚆</span> Train
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);">
+            <p style="margin:0 0 0.5rem;" data-i18n="faq_a5d">There is a train that connects the airport to Bucharest's main station, Gara de Nord, but it's reportedly slow and I haven't tried it myself.</p>
             <p style="margin:0;" data-i18n-html="faq_a5h">If you are planning on visiting sites outside of Bucharest, you can take the train from the main station, Gara De Nord. To purchase train tickets, please use this website: <a href="https://www.cfrcalatori.ro/en/" target="_blank" rel="noopener noreferrer">cfrcalatori.ro</a></p>
           </div>
         </details>
@@ -903,7 +1040,8 @@ nav {
       travel_h2: "Travel & Lodging",
       travel_stay: "<strong>Where to stay</strong> — Add 2–3 hotel suggestions near your venue or Old Town, with booking links if you have group rates.",
       travel_get: "<strong>Getting around</strong> — Taxis and ride-hailing (e.g. Bolt) are widely used; the metro is useful for central sights.",
-      things_sub: "We have an exciting week of activities leading up to the wedding!",
+      things_sub: "We know many of you are traveling a great distance to be at our wedding and we could not be more thankful!",
+      things_sub2: "To help make your stay as easy and enjoyable as possible, below is a list of some of our top recommendations of things to experience while you are here. Please make sure to come back to this page in the future as well, as we have plans to put together some group activities the days leading up to the wedding!",
       things_i1: "Below is a list of group activities available the week before the wedding, plus instructions on how to join each one. You're welcome to join any number of activities — or visit these places on your own time while in Bucharest! These are our top recommendations and we hope you enjoy them!",
       things_i2: "Please note: These are informal group outings rather than guided tours. The specified activity will provide an opportunity to have everyone at the same outing, but there will not be a formal tour leader; once we arrive you're free to explore independently or stick with the group.",
       things_i3: "The purpose of these activities is more for people to have a reason to travel with a larger group, and get the chance to mix and mingle leading up to the wedding.",
@@ -926,7 +1064,7 @@ nav {
       faq_q4: "What if I have a dietary restriction?", faq_a4: "When you RSVP you will have the option to mark any dietary restrictions you might have. We will do our best to accommodate all diets!",
       faq_q5: "What is the best way to get around Bucharest?",
       faq_a5a: "We will provide a shuttle for transportation between the religious ceremony and reception.",
-      faq_a5b: "Your hotel can arrange a shuttle or private transfer — the hotel where we reserved a room block can help coordinate this.",
+      faq_a5b: "For airport pick-up or drop-off, your hotel can arrange a shuttle or private transfer—the hotel where we reserved a room block can help coordinate this.",
       faq_a5c: "Uber is also an easy option and what we usually use to get to and from the airport.",
       faq_a5d: "There is a train that connects the airport to Bucharest's main station, Gara de Nord, but it's reportedly slow and I haven't tried it myself.",
       faq_a5e: "Uber is easy, reliable, and inexpensive for short trips around the city. It is best to have the app already downloaded and your payment already set up before you arrive in Bucharest.",
@@ -980,7 +1118,8 @@ nav {
       travel_h2: "Călătorie și cazare",
       travel_stay: "<strong>Blocuri de camere în curând.</strong> Vom rezerva un bloc de camere la hotelul unde va avea loc recepția, InterContinental AthéNéE Palace București, disponibil din septembrie. Vom avea de asemenea un al doilea bloc de camere la un hotel din apropierea centrului orașului.",
       travel_get: "<strong>Deplasări</strong> — Taxiurile și aplicațiile de ride-sharing (ex. Bolt) sunt frecvente; metroul este util pentru obiectivele centrale.",
-      things_sub: "Avem o săptămână plină de activități înainte de nuntă!",
+      things_sub: "Știm că mulți dintre voi călătoriți de departe pentru a fi la nunta noastră și nu putem fi mai recunoscători!",
+      things_sub2: "Pentru a vă face șederea cât mai ușoară și plăcută, mai jos găsiți o listă cu cele mai bune recomandări ale noastre de lucruri de experimentat în timp ce sunteți aici. Asigurați-vă că reveniți pe această pagină și în viitor, deoarece avem planuri să organizăm câteva activități de grup în zilele dinaintea nunții!",
       things_i1: "Mai jos găsiți activități de grup în săptămâna dinaintea nunții și cum vă puteți înscrie. Puteți participa la câte doriți — sau vizita aceste locuri în timpul vostru liber la București! Sunt recomandările noastre și sperăm să vă placă!",
       things_i2: "Notă: sunt ieșiri informale de grup, nu tururi ghidate. Activitatea oferă ocazia să fiți cu toții în același loc, fără ghid oficial; după sosire puteți explora singuri sau împreună cu grupul.",
       things_i3: "Scopul este să aveți un motiv să călătoriți împreună cu un grup mai mare și să vă cunoașteți înainte de nuntă.",
