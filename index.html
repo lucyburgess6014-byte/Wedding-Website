@@ -533,6 +533,38 @@ nav {
   padding: 0; margin: -1px; overflow: hidden;
   clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
+
+/* ── RECOMMENDATION DROPDOWNS ── */
+.rec-dropdown {
+  background: var(--cream);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}
+.rec-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  background: var(--cream);
+  border: none;
+  border-radius: 0;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--wine);
+  width: 100%;
+}
+.rec-dropdown summary::-webkit-details-marker { display: none; }
+.rec-dropdown .rec-body {
+  background: var(--cream);
+  padding: 2px 18px 16px;
+}
+.rec-dropdown .rec-card-body {
+  background: var(--cream);
+  padding: 2px 14px 12px;
+}
 </style>
 </head>
 
@@ -755,11 +787,11 @@ nav {
     </div>
     <p style="font-size:0.78rem; opacity:0.5; margin:0 0 0.85rem; text-align:center; letter-spacing:0.04em;" data-i18n="rec_tap">Tap any place to open in Google Maps</p>
 
-    <details style="margin-bottom:0.6rem;">
-      <summary style="list-style:none;cursor:pointer;background:var(--cream);border:none;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:var(--wine);">
+    <details class="rec-dropdown">
+      <summary>
         <span style="font-size:1.2rem;">🍽️</span> <span data-i18n="rec_eat">Places to eat</span>
       </summary>
-      <div style="background:var(--cream);border:none;border-radius:0 0 12px 12px;padding:12px 18px 16px;">
+      <div class="rec-body">
         <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 8px;color:var(--wine);" data-i18n="rec_dinner">Dinner</p>
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
           <a href="https://hanumanucrestaurant.ro/en/" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:var(--wine);background:rgba(75,0,31,0.08);border:1px solid rgba(75,0,31,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.15)'" onmouseout="this.style.background='rgba(75,0,31,0.08)'">Hanu lui Manuc <span style="opacity:0.6;font-size:0.8rem;">· traditional Romanian</span></a>
@@ -794,11 +826,11 @@ nav {
       </div>
     </details>
 
-    <details style="margin-bottom:0.6rem;">
-      <summary style="list-style:none;cursor:pointer;background:var(--cream);border:none;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:var(--wine);">
+    <details class="rec-dropdown">
+      <summary>
         <span style="font-size:1.2rem;">🍸</span> <span data-i18n="rec_bars">Bars and cocktail bars</span>
       </summary>
-      <div style="background:var(--cream);border:none;border-radius:0 0 12px 12px;padding:16px 18px;">
+      <div class="rec-body">
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
           <a href="https://maps.google.com/?q=Uzina%20bar%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:var(--wine);background:rgba(75,0,31,0.08);border:1px solid rgba(75,0,31,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.15)'" onmouseout="this.style.background='rgba(75,0,31,0.08)'">Uzina</a>
           <a href="https://maps.google.com/?q=La%20Mita%20Biciclista%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:var(--wine);background:rgba(75,0,31,0.08);border:1px solid rgba(75,0,31,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.15)'" onmouseout="this.style.background='rgba(75,0,31,0.08)'">Mita Biciclista <span style="opacity:0.6;font-size:0.8rem;">· upscale</span></a>
@@ -813,11 +845,11 @@ nav {
       </div>
     </details>
 
-    <details style="margin-bottom:0.6rem;">
-      <summary style="list-style:none;cursor:pointer;background:var(--cream);border:none;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:var(--wine);">
+    <details class="rec-dropdown">
+      <summary>
         <span style="font-size:1.2rem;">🎶</span> <span data-i18n="rec_night">Nightlife</span>
       </summary>
-      <div style="background:var(--cream);border:none;border-radius:0 0 12px 12px;padding:16px 18px;">
+      <div class="rec-body">
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
           <a href="https://maps.google.com/?q=Control%20Club%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:var(--wine);background:rgba(75,0,31,0.08);border:1px solid rgba(75,0,31,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.15)'" onmouseout="this.style.background='rgba(75,0,31,0.08)'">Control Club</a>
           <a href="https://maps.google.com/?q=Beluga%20club%20Bucharest%20Bucharest" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem;color:var(--wine);background:rgba(75,0,31,0.08);border:1px solid rgba(75,0,31,0.22);border-radius:999px;padding:4px 13px;text-decoration:none;display:inline-block;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.15)'" onmouseout="this.style.background='rgba(75,0,31,0.08)'">Beluga</a>
@@ -833,13 +865,13 @@ nav {
       </div>
     </details>
 
-    <details style="margin-bottom:0.6rem;">
-      <summary style="list-style:none;cursor:pointer;background:var(--cream);border:none;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:var(--wine);">
+    <details class="rec-dropdown">
+      <summary>
         <span style="font-size:1.2rem;">🏛️</span> <span data-i18n="rec_see">Things to see and do</span>
       </summary>
-      <div style="background:var(--cream);border:none;border-radius:0 0 12px 12px;padding:12px 14px;">
+      <div class="rec-card-body">
         <a href="https://maps.google.com/?q=National+Museum+of+Art+Romania+Bucharest" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Bucharest_National_Museum_of_Art.jpg/640px-Bucharest_National_Museum_of_Art.jpg" alt="Royal Palace Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-royal-palace.jpg" alt="Royal Palace Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Royal Palace / National Museum of Art</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">National museum with an impressive permanent collection</p>
@@ -847,7 +879,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Cismigiu+Park+Bucharest" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cismigiu_garden%2C_Bucharest.jpg/640px-Cismigiu_garden%2C_Bucharest.jpg" alt="Cișmigiu Park Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-cismigiu.jpg" alt="Cișmigiu Park Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Cișmigiu Park</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Rent row boats on the pond</p>
@@ -855,7 +887,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Palace+of+Parliament+Bucharest" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Palatul_Parlamentului%2C_Bulevardul_Na%C8%9Biunii_Unite%2C_Bucure%C8%99ti_%28cropped%29.jpg/640px-Palatul_Parlamentului%2C_Bulevardul_Na%C8%9Biunii_Unite%2C_Bucure%C8%99ti_%28cropped%29.jpg" alt="Palace of Parliament Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-palace-of-parliament.jpg" alt="Palace of Parliament Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Palace of Parliament</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Second largest government building in the world</p>
@@ -863,7 +895,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Palatul+Primaverii+Bucharest" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Palatul_Primaverii_Bucharest.jpg/640px-Palatul_Primaverii_Bucharest.jpg" alt="Spring Palace Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-spring-palace.jpg" alt="Spring Palace Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">"Spring Palace"</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Ceaușescu's house</p>
@@ -871,7 +903,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Herastrau+Park+Bucharest" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Herastrau_Park_%28cropped%29.jpg/640px-Herastrau_Park_%28cropped%29.jpg" alt="Herăstrău Park Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-herastrau.jpg" alt="Herăstrău Park Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Herăstrău Park</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Beautiful lake park in northern Bucharest</p>
@@ -879,7 +911,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Old+Town+Lipscani+Bucharest" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Centrul_Vechi_Bucuresti_1.jpg/640px-Centrul_Vechi_Bucuresti_1.jpg" alt="Bucharest Old Town" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-old-town.jpg" alt="Bucharest Old Town" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Old Town</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Historic Lipscani district — great for walking and dining</p>
@@ -887,7 +919,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Therme+Bucharest" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Therme_Bucharest_2.jpg/640px-Therme_Bucharest_2.jpg" alt="Therme Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-therme.jpg" alt="Therme Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Therme</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Spa / water park</p>
@@ -895,7 +927,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Wiggle+Room+Bucharest+Str+C+A+Rosetti" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://www.wiggleroom.ro/wp-content/uploads/2022/10/wiggle-room.jpg" alt="Wiggle Room Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-wiggle-room.jpg" alt="Wiggle Room Bucharest" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Wiggle Room</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">For little ones</p>
@@ -906,14 +938,14 @@ nav {
       </div>
     </details>
 
-    <details style="margin-bottom:0.6rem;">
-      <summary style="list-style:none;cursor:pointer;background:var(--cream);border:none;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;color:var(--wine);">
+    <details class="rec-dropdown">
+      <summary>
         <span style="font-size:1.2rem;">🗺️</span> <span data-i18n="rec_excursions">Excursions outside of Bucharest</span>
       </summary>
-      <div style="background:var(--cream);border:none;border-radius:0 0 12px 12px;padding:12px 14px;">
+      <div class="rec-card-body">
         <p style="font-size:0.98rem;opacity:0.8;margin:0 0 12px;line-height:1.6;color:var(--wine);" data-i18n="rec_excursions_sub">Some of these are easy day trips from the city, while others are more of an adventure that are worth renting a car or turning into an overnight journey.</p>
         <a href="https://maps.google.com/?q=Bran+Castle+Romania" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bran_Castle%2C_Romania.jpg/640px-Bran_Castle%2C_Romania.jpg" alt="Bran Castle Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-bran-castle.jpg" alt="Bran Castle Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Bran Castle</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Dracula's Castle</p>
@@ -921,7 +953,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Peles+Castle+Sinaia+Romania" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Peles_Castle.jpg/640px-Peles_Castle.jpg" alt="Peles Castle Sinaia Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-peles-castle.jpg" alt="Peles Castle Sinaia Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Pelеș Castle</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">In the gorgeous town of Sinaia</p>
@@ -929,7 +961,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Cantacuzino+Castle+Busteni+Romania" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Castelul_Cantacuzino_din_Bu%C5%9Fteni.jpg/640px-Castelul_Cantacuzino_din_Bu%C5%9Fteni.jpg" alt="Cantacuzino Castle Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-cantacuzino-castle.jpg" alt="Cantacuzino Castle Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Cantacuzino Castle</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Where they filmed the Netflix show Wednesday</p>
@@ -937,7 +969,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Busteni+Cable+Car+Romania" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Bucegi_mountains_from_Busteni.jpg/640px-Bucegi_mountains_from_Busteni.jpg" alt="Bucegi Mountains Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-busteni-cable-car.jpg" alt="Bucegi Mountains Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Bușteni Cable Car</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Takes you to the top of the Bucegi Mountains</p>
@@ -945,7 +977,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Transfagarasan+Road+Romania" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Transfagarasan_DN7C.jpg/640px-Transfagarasan_DN7C.jpg" alt="Transfagarasan Road Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-transfagarasan.jpg" alt="Transfagarasan Road Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Transfăgărășan Road</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Romania's iconic mountain pass over the Făgăraș Mountains</p>
@@ -953,7 +985,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Brasov+Romania" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Brasov_Council_Square.jpg/640px-Brasov_Council_Square.jpg" alt="Brasov Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-brasov.jpg" alt="Brasov Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Brașov</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Historic Saxon town</p>
@@ -961,7 +993,7 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Sighisoara+Romania" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Sighisoara%2C_centru_12.jpg/640px-Sighisoara%2C_centru_12.jpg" alt="Sighisoara Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-sighisoara.jpg" alt="Sighisoara Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Sighișoara</p>
             <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">UNESCO World Heritage Site</p>
@@ -969,10 +1001,10 @@ nav {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://maps.google.com/?q=Constanta+Romania" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Constanta_plaja.jpg/640px-Constanta_plaja.jpg" alt="Constanta Black Sea Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;background:rgba(75,0,31,0.1);" loading="lazy" onerror="this.style.display='none'">
+          <img src="img-constanta.jpg" alt="Constanta Black Sea Romania" style="width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Constanța</p>
-            <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Romania's coastal port city — perfect for a beach day on the Black Sea</p>
+            <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Black Sea beach city</p>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
