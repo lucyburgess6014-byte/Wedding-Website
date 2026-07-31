@@ -567,6 +567,19 @@ nav {
   background: var(--cream);
   padding: 2px 14px 12px;
 }
+
+/* ── RECOMMENDATION DROPDOWN CHEVRON ── */
+.rec-dropdown summary {
+  position: relative;
+}
+.rec-chevron {
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.rec-dropdown[open] .rec-chevron {
+  transform: rotate(90deg);
+}
 </style>
 </head>
 
@@ -791,7 +804,7 @@ nav {
 
     <details class="rec-dropdown">
       <summary>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg> <span data-i18n="rec_eat">Places to eat</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg> <span data-i18n="rec_eat">Places to eat</span> <svg class="rec-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
       </summary>
       <div class="rec-body">
         <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:0 0 8px;color:var(--wine);" data-i18n="rec_coffee">Coffee</p>
@@ -831,7 +844,7 @@ nav {
 
     <details class="rec-dropdown">
       <summary>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M8 22h8"/><path d="M12 11v11"/><path d="M20 2H4l6.5 9.5a3 3 0 0 1 .5 1.5v.5a3 3 0 0 0 .5 1.5L12 16l.5-1.5A3 3 0 0 0 13 13v-.5a3 3 0 0 1 .5-1.5Z"/></svg> <span data-i18n="rec_bars">Bars and cocktail bars</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M8 22h8"/><path d="M12 11v11"/><path d="M20 2H4l6.5 9.5a3 3 0 0 1 .5 1.5v.5a3 3 0 0 0 .5 1.5L12 16l.5-1.5A3 3 0 0 0 13 13v-.5a3 3 0 0 1 .5-1.5Z"/></svg> <span data-i18n="rec_bars">Bars and cocktail bars</span> <svg class="rec-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
       </summary>
       <div class="rec-body">
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
@@ -850,7 +863,7 @@ nav {
 
     <details class="rec-dropdown">
       <summary>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg> <span data-i18n="rec_night">Nightlife</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg> <span data-i18n="rec_night">Nightlife</span> <svg class="rec-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
       </summary>
       <div class="rec-body">
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
@@ -870,14 +883,14 @@ nav {
 
     <details class="rec-dropdown">
       <summary>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M3 21h18"/><path d="M6 21V7l6-4 6 4v14"/><path d="M9 21v-6h6v6"/><rect x="9" y="9" width="6" height="4" rx="0.5"/></svg> <span data-i18n="rec_see">Things to see and do</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M3 21h18"/><path d="M6 21V7l6-4 6 4v14"/><path d="M9 21v-6h6v6"/><rect x="9" y="9" width="6" height="4" rx="0.5"/></svg> <span data-i18n="rec_see">Things to see and do</span> <svg class="rec-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
       </summary>
       <div class="rec-card-body">
         <a href="https://maps.google.com/?q=National+Museum+of+Art+Romania+Bucharest" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(75,0,31,0.05);border:1px solid rgba(75,0,31,0.15);border-radius:12px;margin-bottom:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(75,0,31,0.1)'" onmouseout="this.style.background='rgba(75,0,31,0.05)'">
           <img src="img-royal-palace.jpg" alt="Royal Palace Bucharest" style="width:72px;height:72px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Royal Palace / National Museum of Art</p>
-            <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">National museum with an impressive permanent collection</p>
+            <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">A royal palace on Bucharest's main street that also houses an amazing art museum</p>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
@@ -909,7 +922,7 @@ nav {
           <img src="img-herastrau.jpg" alt="Herăstrău Park Bucharest" style="width:72px;height:72px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Herăstrău Park</p>
-            <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Beautiful lake park in northern Bucharest</p>
+            <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">A large park around a lake in northern Bucharest with lots of restaurants around the lake to enjoy as well</p>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
@@ -917,7 +930,7 @@ nav {
           <img src="img-old-town.jpg" alt="Bucharest Old Town" style="width:72px;height:72px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy">
           <div style="flex:1;min-width:0;">
             <p style="font-size:0.95rem;font-weight:600;color:var(--wine);margin:0 0 3px;font-family:inherit;">Old Town</p>
-            <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Historic Lipscani district — great for walking and dining</p>
+            <p style="font-size:0.82rem;color:rgba(75,0,31,0.65);margin:0;font-style:italic;">Historic old town, filled with lots of shops, restaurants, and where lots of nightlife is</p>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(75,0,31,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
@@ -942,7 +955,7 @@ nav {
 
     <details class="rec-dropdown">
       <summary>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> <span data-i18n="rec_excursions">Excursions outside of Bucharest</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> <span data-i18n="rec_excursions">Excursions outside of Bucharest</span> <svg class="rec-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
       </summary>
       <div class="rec-card-body">
         <p style="font-size:0.98rem;opacity:0.8;margin:0 0 12px;line-height:1.6;color:var(--wine);" data-i18n-html="rec_excursions_sub">Some of these are easy day trips from the city, while others are more of an adventure that are worth renting a car or turning into an overnight journey. If you are planning on visiting sites outside of Bucharest, you can take the train from the main station, Gara de Nord. To purchase train tickets, please use this website: <a href="https://www.cfrcalatori.ro/en/" target="_blank" rel="noopener noreferrer" style="color:var(--wine);font-weight:600;">cfrcalatori.ro</a>.</p>
@@ -1052,36 +1065,36 @@ nav {
 
         <details style="border-bottom: 1px solid rgba(75,0,31,0.12);">
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">✈</span> Airport pick-up &amp; drop-off
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">✈</span> Airport pick-up &amp; drop-off <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
-          <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);" data-i18n="faq_a5b">
-            Your hotel can arrange a shuttle or private transfer — the hotel where we reserved a room block can help coordinate this.
+          <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);">
+            <p style="margin:0 0 0.5rem;" data-i18n="faq_a5b">Your hotel can arrange a shuttle or private transfer — the hotel where we reserved a room block can help coordinate this.</p>
+            <p style="margin:0 0 0.5rem;" data-i18n="faq_a5c">Uber is also an easy option and what we usually use to get to and from the airport.</p>
+            <p style="margin:0;" data-i18n="faq_a5d">There is a train that connects the airport to Bucharest's main station, Gara de Nord, but it's reportedly slow and I haven't tried it myself.</p>
           </div>
         </details>
 
         <details style="border-bottom: 1px solid rgba(75,0,31,0.12);">
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">✦</span> Uber
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">✦</span> Uber <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);">
-            <p style="margin:0 0 0.5rem;" data-i18n="faq_a5c">Uber is also an easy option and what we usually use to and from the airport.</p>
             <p style="margin:0;" data-i18n="faq_a5e">Uber is easy, reliable, and inexpensive for short trips around the city. It is best to have the app already downloaded and your payment already set up before you arrive in Bucharest.</p>
           </div>
         </details>
 
         <details style="border-bottom: 1px solid rgba(75,0,31,0.12);">
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">❧</span> Train
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">❧</span> Train <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);">
-            <p style="margin:0 0 0.5rem;" data-i18n="faq_a5d">There is a train that connects the airport to Bucharest's main station, Gara de Nord, but it's reportedly slow and I haven't tried it myself.</p>
             <p style="margin:0;" data-i18n-html="faq_a5h">If you are planning on visiting sites outside of Bucharest, you can take the train from the main station, Gara De Nord. To purchase train tickets, please use this website: <a href="https://www.cfrcalatori.ro/en/" target="_blank" rel="noopener noreferrer">cfrcalatori.ro</a></p>
           </div>
         </details>
 
         <details style="border-bottom: 1px solid rgba(75,0,31,0.12);">
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">⚜</span> Subway
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">⚜</span> Subway <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);" data-i18n-html="faq_a5f">
             Bucharest's subway system is clean and efficient (operating 5:00 AM–11:00 PM) — most wedding activities are near Piața Romană or Piața Universității. See the metro map here: <a href="https://visitbucharest.today/bucharest-metro/" target="_blank" rel="noopener noreferrer">visitbucharest.today/bucharest-metro</a>
@@ -1090,7 +1103,7 @@ nav {
 
         <details>
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">❋</span> Walking
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">❋</span> Walking <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);" data-i18n="faq_a5g">
             The street that most of the wedding activities is set on, Calea Victoriei, is a very walkable area — you can easily walk to sites such as Old Town, Cișmigiu Park, and the Royal Palace, along with many cute stores, cafes, and restaurants.
@@ -1121,7 +1134,7 @@ nav {
     <summary class="faq-question" data-i18n="faq_q8">Any other tips and tricks?</summary>
     <div class="faq-answer">
       <p data-i18n="faq_a8a">Please keep in mind that this will be a very hot time of the year to be traveling in Europe/Romania. Many older buildings and trains do not have A/C, so I suggest having a hand fan/mini electronic fan.</p>
-      <p data-i18n-html="faq_a8b"><strong>"Apa plata"</strong> is what to ask for if you want "flat" water (non sparkling water).</p>
+      <p data-i18n-html="faq_a8b"><strong>"Apa plata"</strong> is what to ask for if you want "still" water (non sparkling water).</p>
       <p data-i18n="faq_a8c">Romanian food heavily consist of meat and pork, but Bucharest does offer many international restaurants that should accommodate dietary restrictions.</p>
       <p style="margin-bottom:0;" data-i18n="faq_a8d">Please reach out to us if you do have any specific questions or concerns!! We are happy to help you prepare for such a big international journey.</p>
     </div>
@@ -1227,7 +1240,7 @@ nav {
       faq_q7: "What is the Romanian Currency/ Language", faq_a7a: "The Romanian currency is a leu.", faq_a7b: "1 dollar = 4.40 Lei", faq_a7c: "Many places do accept card payments, but it is advised to have some cash on hand.",
       faq_a7d: "The spoken language is Romanian.", faq_a7e: "You can easily get around with English in the city; less so the farther out of the city you venture.",
       faq_q8: "Any other tips and tricks?", faq_a8a: "Please keep in mind that this will be a very hot time of the year to be traveling in Europe/Romania. Many older buildings and trains do not have A/C, so I suggest having a hand fan/mini electronic fan.",
-      faq_a8b: "<strong>\"Apa plata\"</strong> is what to ask for if you want \"flat\" water (non sparkling water).", faq_a8c: "Romanian food heavily consist of meat and pork, but Bucharest does offer many international restaurants that should accommodate dietary restrictions.",
+      faq_a8b: "<strong>\"Apa plata\"</strong> is what to ask for if you want \"still\" water (non sparkling water).", faq_a8c: "Romanian food heavily consist of meat and pork, but Bucharest does offer many international restaurants that should accommodate dietary restrictions.",
       faq_a8d: "Please reach out to us if you do have any specific questions or concerns!! We are happy to help you prepare for such a big international journey.",
       reg_lead: "Your presence is the best gift. If you would like to give something, we have registered at:",
       reg_placeholder: "Replace this block with links to your registry (e.g. John Lewis, Zola, honeymoon fund). Example: <a href=\"#\">Registry link</a>",
