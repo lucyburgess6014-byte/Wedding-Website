@@ -580,6 +580,19 @@ nav {
 .rec-dropdown[open] .rec-chevron {
   transform: rotate(90deg);
 }
+details[open] .rec-chevron {
+  transform: rotate(90deg);
+}
+
+/* ── FAQ TRANSPORT CHEVRON ── */
+.faq-chevron {
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+details[open] > summary .faq-chevron {
+  transform: rotate(90deg);
+}
 </style>
 </head>
 
@@ -636,7 +649,7 @@ nav {
       <p data-i18n="story_p2">True to his word, Cosmin visited in October, which also happened to be his first time in the United States. His first trip to the U.S. included exploring Little Rock, celebrating Halloween, and even catching a Mavericks–Jazz game in Dallas.</p>
       <p data-i18n="story_p3">After a year of long distance, Lucy moved to Bucharest when she graduated from her master's program.</p>
       <p data-i18n="story_p4">They spent the next two years living in Bucharest, discovering new favorite restaurants, going to the movies, taking weekend excursions, and visiting family in Eforie Sud and in the United States.</p>
-      <p data-i18n="story_p5">When Lucy's job brought her back to the United States, they planned a post-holiday trip to Paris — and in the gardens at Versailles, Cosmin asked Lucy to marry him.</p>
+      <p data-i18n="story_p5">After two years of living together in Bucharest, Lucy's job brought her back to the United States. They made sure to plan regular trips to see each other after she moved away, and it was during one of these visits, on a post-holiday trip to Paris, in the gardens at Versailles, Cosmin asked Lucy to marry him.</p>
     </div>
   </div>
 </section>
@@ -668,14 +681,14 @@ nav {
   <h2 id="schedule-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="sch_page_title">Weekend Schedule</span></h2>
   <p class="section-lead" data-i18n="schedule_lead">We can't wait to celebrate with you.</p>  <div class="schedule-box">
     <div class="content-card">
-      <strong data-i18n="sch_fri">Friday, July 16</strong>
+      <strong data-i18n="sch_fri" style="text-decoration:underline;">Friday, July 16</strong>
       <p style="margin:0.5rem 0 0;"><strong data-i18n="sch_fri_welcome">Welcome Drinks</strong></p>
       <p style="margin:0.25rem 0 0;"><strong data-i18n="sch_fri_time">TBD</strong></p>
       <p style="margin:0.75rem 0 0;" data-i18n="sch_fri_p1">Come join us for drinks the night before the wedding!</p>
       <p style="margin:0.5rem 0 0;" data-i18n="sch_fri_p2">This will be an opportunity for more guests to mix and mingle before the big day!</p>
     </div>
     <div class="content-card">
-      <strong data-i18n="sch_sat">Saturday, July 17</strong>
+      <strong data-i18n="sch_sat" style="text-decoration:underline;">Saturday, July 17</strong>
       <p style="margin:0.5rem 0 0;"><strong data-i18n="sch_sat_cer">Catholic Ceremony</strong></p>
       <p style="margin:0.25rem 0 0;"><strong data-i18n="sch_sat_church">3:00 pm @ St. Joseph's Cathedral</strong></p>
       <p style="margin:0.25rem 0 0; font-size:0.88rem; opacity:0.75;">📍 Strada General H. M. Berthelot 19, București</p>
@@ -715,7 +728,6 @@ nav {
     <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.75rem; justify-content:center;">
       <a href="https://maps.google.com/?q=InterContinental+AthéNéE+Palace,+Strada+Episcopiei+1-3,+Bucharest" target="_blank" rel="noopener noreferrer" style="font-family:inherit; font-size:0.82rem; color:rgba(255,255,255,0.75); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:6px 14px; border-radius:999px; text-decoration:none;">📍 InterContinental</a>
       <a href="https://maps.google.com/?q=Saint+Joseph+Catholic+Cathedral,+Strada+General+Berthelot+19,+Bucharest" target="_blank" rel="noopener noreferrer" style="font-family:inherit; font-size:0.82rem; color:rgba(255,255,255,0.75); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:6px 14px; border-radius:999px; text-decoration:none;">📍 St. Joseph's Cathedral</a>
-      <a href="https://maps.google.com/?q=Bar+Savart,+Strada+George+Enescu+2-4,+Bucharest" target="_blank" rel="noopener noreferrer" style="font-family:inherit; font-size:0.82rem; color:rgba(255,255,255,0.75); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:6px 14px; border-radius:999px; text-decoration:none;">📍 Bar Savart</a>
     </div>
   </div>
 
@@ -1041,7 +1053,7 @@ nav {
 
   <details class="faq-item">
     <summary class="faq-question" data-i18n="faq_q2">What is the dress code?</summary>
-    <p class="faq-answer" data-i18n="faq_a2">This will be a formal event, so the dress code will be formal. It will be very hot, so plan for suits/dresses/formal wear that will be comfortable!</p>
+    <p class="faq-answer" data-i18n="faq_a2">Summer Formal — It will be very hot, so plan for suits/dresses/formal wear that will be comfortable!</p>
   </details>
 
   <details class="faq-item">
@@ -1065,7 +1077,7 @@ nav {
 
         <details style="border-bottom: 1px solid rgba(75,0,31,0.12);">
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">✈</span> Airport pick-up &amp; drop-off <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;font-variant-emoji:text;">✈︎</span> Airport pick-up &amp; drop-off <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);">
             <p style="margin:0 0 0.5rem;" data-i18n="faq_a5b">Your hotel can arrange a shuttle or private transfer — the hotel where we reserved a room block can help coordinate this.</p>
@@ -1076,7 +1088,7 @@ nav {
 
         <details style="border-bottom: 1px solid rgba(75,0,31,0.12);">
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">✦</span> Uber <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;font-variant-emoji:text;">✦︎</span> Uber <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);">
             <p style="margin:0;" data-i18n="faq_a5e">Uber is easy, reliable, and inexpensive for short trips around the city. It is best to have the app already downloaded and your payment already set up before you arrive in Bucharest.</p>
@@ -1085,7 +1097,7 @@ nav {
 
         <details style="border-bottom: 1px solid rgba(75,0,31,0.12);">
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">❧</span> Train <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;font-variant-emoji:text;">❧︎</span> Train <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);">
             <p style="margin:0;" data-i18n-html="faq_a5h">If you are planning on visiting sites outside of Bucharest, you can take the train from the main station, Gara De Nord. To purchase train tickets, please use this website: <a href="https://www.cfrcalatori.ro/en/" target="_blank" rel="noopener noreferrer">cfrcalatori.ro</a></p>
@@ -1094,7 +1106,7 @@ nav {
 
         <details style="border-bottom: 1px solid rgba(75,0,31,0.12);">
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">⚜</span> Subway <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;font-variant-emoji:text;">⚜︎</span> Subway <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);" data-i18n-html="faq_a5f">
             Bucharest's subway system is clean and efficient (operating 5:00 AM–11:00 PM) — most wedding activities are near Piața Romană or Piața Universității. See the metro map here: <a href="https://visitbucharest.today/bucharest-metro/" target="_blank" rel="noopener noreferrer">visitbucharest.today/bucharest-metro</a>
@@ -1103,7 +1115,7 @@ nav {
 
         <details>
           <summary style="padding: 12px 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--wine);">
-            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;">❋</span> Walking <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;flex-shrink:0;transition:transform 0.25s ease;"><path d="M9 18l6-6-6-6"/></svg>
+            <span style="font-size:1rem;font-weight:700;color:#c9a227;font-family:Georgia,serif;flex-shrink:0;min-width:20px;text-align:center;font-variant-emoji:text;">❋︎</span> Walking <svg class="rec-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><path d="M9 18l6-6-6-6"/></svg>
           </summary>
           <div style="padding: 10px 14px 14px; font-size: 0.92rem; line-height: 1.65; color: var(--wine); border-top: 1px solid rgba(75,0,31,0.1);" data-i18n="faq_a5g">
             The street that most of the wedding activities is set on, Calea Victoriei, is a very walkable area — you can easily walk to sites such as Old Town, Cișmigiu Park, and the Royal Palace, along with many cute stores, cafes, and restaurants.
@@ -1135,7 +1147,6 @@ nav {
     <div class="faq-answer">
       <p data-i18n="faq_a8a">Please keep in mind that this will be a very hot time of the year to be traveling in Europe/Romania. Many older buildings and trains do not have A/C, so I suggest having a hand fan/mini electronic fan.</p>
       <p data-i18n-html="faq_a8b"><strong>"Apa plata"</strong> is what to ask for if you want "still" water (non sparkling water).</p>
-      <p data-i18n="faq_a8c">Romanian food heavily consist of meat and pork, but Bucharest does offer many international restaurants that should accommodate dietary restrictions.</p>
       <p style="margin-bottom:0;" data-i18n="faq_a8d">Please reach out to us if you do have any specific questions or concerns!! We are happy to help you prepare for such a big international journey.</p>
     </div>
   </details>
@@ -1184,7 +1195,8 @@ nav {
       story_p2: "True to his word, Cosmin visited in October, which also happened to be his first time in the United States. His first trip to the U.S. included exploring Little Rock, celebrating Halloween, and even catching a Mavericks–Jazz game in Dallas.",
       story_p3: "After a year of long distance, Lucy moved to Bucharest when she graduated from her master's program.",
       story_p4: "They spent the next two years living in Bucharest, discovering new favorite restaurants, going to the movies, taking weekend excursions, and visiting family in Eforie Sud and in the United States.",
-      story_p5: "When Lucy's job brought her back to the United States, they planned a post-holiday trip to Paris — and in the gardens at Versailles, Cosmin asked Lucy to marry him.",
+      story_p5_old: "hidden",
+      story_p5: "After two years of living together in Bucharest, Lucy's job brought her back to the United States. They made sure to plan regular trips to see each other after she moved away, and it was during one of these visits, on a post-holiday trip to Paris, in the gardens at Versailles, Cosmin asked Lucy to marry him.",
       photos_lead: "A few favorites — click to enlarge.",
       photos_grid_aria: "Photo gallery",
       photos_credit: "Our engagement photos were done by the amazing Andreea Sali from Eforie Sud<br>\n    Instagram business account: <strong>as.momentcolor</strong><br>\n    <a href=\"https://www.fotografi-cameramani.ro/andreea-sali_6974\" target=\"_blank\" rel=\"noopener noreferrer\">fotografi-cameramani.ro/andreea-sali_6974</a>",
@@ -1224,7 +1236,7 @@ nav {
       things_m15_p3: "Buy tickets at the entrance or in advance on their website: <a href=\"https://www.therme.ro/\" target=\"_blank\" rel=\"noopener noreferrer\">therme.ro</a>.",
       things_m15_p4: "Choose any package and duration you prefer. Please bring flip-flops to wear between pool areas; if you don't have a pair you can buy them on site.",
       faq_q1: "What is the best way to get to Bucharest?", faq_a1: "<strong>Bucharest Henri Coandă International Airport (OTP)</strong> is the main airport to fly into.",
-      faq_q2: "What is the dress code?", faq_a2: "This will be a formal event, so the dress code will be formal. It will be very hot, so plan for suits/dresses/formal wear that will be comfortable!",
+      faq_q2: "What is the dress code?", faq_a2: "Summer Formal — It will be very hot, so plan for suits/dresses/formal wear that will be comfortable!",
       faq_q3: "Will the wedding be indoors or outdoors?", faq_a3a: "Most everything will take place indoors!", faq_a3b: "The religious ceremony and main reception will be inside, with cocktail hour being outside on a terrace, weather permitting.",
       faq_q4: "What if I have a dietary restriction?", faq_a4: "When you RSVP you will have the option to mark any dietary restrictions you might have. We will do our best to accommodate all diets!",
       faq_q5: "What is the best way to get around Bucharest?",
@@ -1268,7 +1280,7 @@ nav {
       story_p2: "Și-a ținut promisiunea: Cosmin a vizitat-o în octombrie — prima lui vizită în Statele Unite. Călătoria a inclus explorarea Little Rock-ului, Halloween-ul și chiar un meci Mavericks–Jazz la Dallas.",
       story_p3: "După un an la distanță, Lucy s-a mutat la București după absolvirea masteratului.",
       story_p4: "Următorii doi ani i-au petrecut la București, descoperind restaurante, mergând la cinema, în excursii de weekend și vizitând familia la Eforie Sud și în Statele Unite.",
-      story_p5: "Când jobul lui Lucy a readus-o în Statele Unite, au plănuit o călătorie după sărbători la Paris — iar în grădinile de la Versailles, Cosmin a cerut-o de soție pe Lucy.",
+      story_p5: "După doi ani petrecuți împreună la București, jobul lui Lucy a readus-o în Statele Unite. S-au asigurat să planifice vizite regulate pentru a se vedea după ce s-a mutat, iar în timpul uneia dintre aceste vizite, într-o călătorie după sărbători la Paris, în grădinile de la Versailles, Cosmin a cerut-o de soție pe Lucy.",
       photos_lead: "Câteva favorite — apăsați pentru mărire.",
       photos_grid_aria: "Galerie foto",
       photos_credit: "Fotografiile de logodnă au fost realizate de minunata Andreea Sali din Eforie Sud<br>\n    Cont Instagram business: <strong>as.momentcolor</strong><br>\n    <a href=\"https://www.fotografi-cameramani.ro/andreea-sali_6974\" target=\"_blank\" rel=\"noopener noreferrer\">fotografi-cameramani.ro/andreea-sali_6974</a>",
@@ -1309,7 +1321,7 @@ nav {
       things_m15_p3: "Biletele le puteți lua la intrare sau în avans pe site: <a href=\"https://www.therme.ro/\" target=\"_blank\" rel=\"noopener noreferrer\">therme.ro</a>.",
       things_m15_p4: "Alegeți pachetul și durata dorite. Luați papuci de piscină pentru deplasarea între zone; dacă nu aveți, se pot cumpăra la fața locului.",
       faq_q1: "Care este cea mai bună modalitate de a ajunge la București?", faq_a1: "<strong>Aeroportul Internațional Henri Coandă București (OTP)</strong> este principalul aeroport pentru zboruri.",
-      faq_q2: "Care este dress code-ul?", faq_a2: "Evenimentul este formal. Va fi foarte cald — alegeți costume/rochii/ținută formală confortabilă!",
+      faq_q2: "Care este dress code-ul?", faq_a2: "Summer Formal — Va fi foarte cald, alegeți costume/rochii/ținută formală confortabilă!",
       faq_q3: "Nunta este în interior sau exterior?", faq_a3a: "Aproape totul va fi în interior!", faq_a3b: "Ceremonia religioasă și recepția vor fi înăuntru; cocktailul poate fi pe terasă, în funcție de vreme.",
       faq_q4: "Ce fac dacă am restricții alimentare?", faq_a4: "La RSVP veți putea indica restricțiile alimentare. Ne străduim să le respectăm pe toate!",
       faq_q5: "Cum mă deplasez prin București?",
@@ -1326,7 +1338,6 @@ nav {
       faq_a7d: "Limba vorbită este româna.", faq_a7e: "În centru vă descurcați ușor cu engleza; mai greu în afara orașului.",
       faq_q8: "Alte sfaturi?", faq_a8a: "Vara poate fi foarte caldă; multe clădiri vechi și trenuri fără aer condiționat — luați un evantai sau un mini ventilator.",
       faq_a8b: "<strong>\u201eApă plată\u201e</strong> — așa cereți apă fără gaz, dacă nu doriți apă minerală.",
-      faq_a8c: "Bucătăria românească include multă carne și porc, dar Bucureștiul are și restaurante internaționale pentru diverse diete.",
       faq_a8d: "Scrieți-ne dacă aveți întrebări — vă ajutăm cu plăcere să vă pregătiți pentru această călătorie!",
       reg_lead: "În curând disponibil.",
       reg_placeholder: "Detaliile listei de cadouri vor fi disponibile aici în curând. Reveniți mai târziu!",
