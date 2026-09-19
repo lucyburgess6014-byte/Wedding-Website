@@ -219,10 +219,6 @@ p, li { line-height: 1.7; }
   height: 100%;
   transform: translateX(-50%);
   background-color: var(--wine-deep);
-  background-image: url('story-bg.jpg');
-  background-size: 260px auto;
-  background-position: center;
-  background-repeat: repeat;
   z-index: -1;
 }
 #story h2, #story .section-lead {
@@ -236,16 +232,38 @@ p, li { line-height: 1.7; }
   max-width: 42rem;
   margin: 0 auto 0.5rem;
 }
-.story-frame {
-  margin: 0; padding: 0; background: transparent;
-  border-radius: 0; box-shadow: none; line-height: 0;
-  width: 100%; max-width: 500px;
+/* Decorative lace-frame + stars artwork, sized to its own aspect ratio so it
+   never stretches or distorts; the photo sits cropped into the lace window
+   at the exact percentages measured from the artwork. */
+.story-frame-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1044 / 1853;
+  margin: 0 auto;
 }
-.story-img {
-  width: 100%; height: auto;
-  max-height: min(55vh, 500px);
-  object-fit: contain; object-position: center;
-  border-radius: 12px; display: block; margin: 0;
+.story-frame-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('story-photo-frame.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+.story-frame-photo {
+  position: absolute;
+  left: 31.99%;
+  top: 32.43%;
+  width: 37.74%;
+  height: 31.84%;
+  overflow: hidden;
+}
+.story-frame-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block; margin: 0;
 }
 .story-text p { margin: 0 0 1rem; }
 .story-text p:last-child { margin-bottom: 0; }
@@ -724,9 +742,12 @@ details[open] > summary .faq-chevron {
 <section id="story" hidden aria-labelledby="story-heading">
   <h2 id="story-heading"><img src="swan.png" alt="" width="62" height="62" loading="lazy"><span data-i18n="nav_story">Our Story</span></h2>
   <p class="section-lead" data-i18n="story_lead">We are so happy you are part of this chapter.</p>  <div class="story-layout">
-    <figure class="story-frame">
-      <img src="our-story.jpg" alt="Lucy and Cosmin" class="story-img" width="640" height="427" loading="eager" decoding="async" fetchpriority="high" data-i18n-alt="story_img_alt">
-    </figure>
+    <div class="story-frame-wrap">
+      <div class="story-frame-bg" aria-hidden="true"></div>
+      <div class="story-frame-photo">
+        <img src="our-story.jpg" alt="Lucy and Cosmin" width="640" height="427" loading="eager" decoding="async" fetchpriority="high" data-i18n-alt="story_img_alt">
+      </div>
+    </div>
     <div class="content-card story-text">
       <p data-i18n="story_p1">Lucy and Cosmin met in the summer of 2022, when Lucy was finishing a project for her master's degree in Bucharest. Lucy was on the train back from a weekend in Bulgaria, when Cosmin happened to be sitting in her seat. After a train ride home together, they exchanged contact information, and what started as seeing each other in friend group settings, soon became planning dates for just the two of them. They spent the rest of that summer inseparable, and when Lucy went back home at the end of the summer, Cosmin promised to visit her in the United States.</p>
       <p data-i18n="story_p2">True to his word, Cosmin visited in October, which also happened to be his first time in the United States. His first trip to the U.S. included exploring Little Rock, celebrating Halloween, and even catching a Mavericks–Jazz game in Dallas.</p>
